@@ -1,0 +1,28 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "name": "Name",
+      "category": "Category",
+      "amount": 10
+    },
+    {
+      "name": "second item",
+      "category": "food",
+      "amount": "20",
+      "id": 2
+    },
+    {
+      "name": "third item",
+      "category": "clothing",
+      "amount": "30",
+      "id": 3
+    },
+    {
+      "name": "dinner",
+      "category": "food",
+      "amount": "15",
+      "id": 4
+    }
+  ]
+}
