@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Home from './Home'
 import NavBar from './NavBar'
 import ExpenseList from './ExpenseList'
@@ -8,10 +8,21 @@ import '../App.css';
 
 function App() {
 
+  const [expenses, setExpenses] = useState([]);
   function onSubmitExpense(newExpense){
     console.log(newExpense)
   }
+
+  useEffect(() => {
+    fetch("http://localhost:4000/expenses")
+    .then(res => res.json())
+    .then(data=> setExpenses(data))}, [])
   
+    function deleteExpense(id){
+      const updatedList = expenses.filter((expense) => expense.id !== id);
+      setExpenses(updatedList);
+    }
+
   return (
     <div>
       <NavBar/>
@@ -20,7 +31,7 @@ function App() {
           <ExpenseForm onSubmitExpense={onSubmitExpense}/>
         </Route>
         <Route path="/expenseList">
-          <ExpenseList/>
+          <ExpenseList deleteExpense={deleteExpense} expenses={expenses} setExpenses={setExpenses} />
         </Route>
         <Route exact path="/">
           <Home/>
