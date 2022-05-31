@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ExpenseItem from './ExpenseItem'
 
 function ExpenseList({expenses, deleteExpense}) {
 
+  const [addedExpense, setAddedExpense] = useState(0);
+  
   const listOfExpenses = expenses.map((expense) => (
     <ExpenseItem
     key={expense.id}
@@ -16,9 +18,16 @@ function ExpenseList({expenses, deleteExpense}) {
     />
   ))
 
+  useEffect(()=>{
+    const totalExpense = expenses.reduce((accumulator,expense)=>{
+      return expense.amount+accumulator},0)
+      setAddedExpense(totalExpense.toFixed(2))
+    },[expenses])
+
   return (
     <div className="expenseContainer">
-      <h1>Receipts:</h1>
+      <h1>Total spent for this month: ${addedExpense}</h1>
+      <h2>Receipts:</h2>
           {listOfExpenses}
     </div>
   )

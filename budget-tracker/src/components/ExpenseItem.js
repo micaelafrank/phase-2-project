@@ -11,7 +11,7 @@ function ExpenseItem({name, image, amount, category, id, day, deleteExpense}){
 
   return (
       <div className="expense">
-        <h2 className='expenseName'>{name}</h2>
+        <h2 className="expenseName">{name}</h2>
         <p className='expensePrice'>Total: ${amount}</p>
         <img className="expenseImage"
           src={image}

@@ -69,8 +69,16 @@ nav {
   margin: 1rem;
 }
 
+.expense .expenseName{
+  color: firebrick;
+  font-size: 30px;
+}
+
 .expense img {
-  width: 100%;
+  height: 100%;
+  max-height: 250px;
+  width: auto;
+  max-width: 160px;
 }
 
 .expense button {
@@ -105,9 +113,10 @@ nav {
 }
 
 .expenseName img{
-  font-size: 14px;
+  /* font-size: 14px; */
   height: 6rem;
   width: auto;
+  color: firebrick;
 }
 
 .expense{

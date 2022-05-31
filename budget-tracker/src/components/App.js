@@ -10,7 +10,8 @@ function App() {
 
   const [expenses, setExpenses] = useState([]);
   function onSubmitExpense(newExpense){
-    console.log(newExpense)
+    const updatedList = [...expenses,newExpense]
+    setExpenses(updatedList)
   }
 
   useEffect(() => {
