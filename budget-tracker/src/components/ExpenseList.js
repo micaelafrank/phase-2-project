@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ExpenseItem from './ExpenseItem'
 
-function ExpenseList({expenses, deleteExpense, setUserSearch, isSplit, setSplit, handleSplitPrice, handleUndoSplit}) {
+function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, handleUndoSplit}) {
   const [addedExpense, setAddedExpense] = useState(0);  
   const listOfExpenses = expenses.map((expense) => (
     <ExpenseItem

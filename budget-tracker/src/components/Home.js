@@ -1,4 +1,6 @@
 import React, {useState,useEffect} from 'react'
+import BorderGif from './BorderGif';
+import Table from './Table';
 
 function Home({expenses}) {
 
@@ -42,6 +44,7 @@ function Home({expenses}) {
   let balance=<span className={(displayBudget-addedExpense).toFixed(2)<0?'low-balance':'balance'}>{(displayBudget-addedExpense).toFixed(2)}</span>
   return (
     <div id="home">
+      <BorderGif/>
       <h1 style={{ color: "firebrick" }}>
           Welcome To Budget Tracker For "{new Date().toLocaleString("en-US", { month: "long" })} {new Date().getFullYear()}"
       </h1>
@@ -54,6 +57,7 @@ function Home({expenses}) {
       <h2>Your Budget for {new Date().toLocaleString("en-US", { month: "long" })}: $ {displayBudget}</h2>
       <h2>Your Total Expense for {new Date().toLocaleString("en-US", { month: "long" })}: $ {addedExpense}</h2>
       <h2>Your Remaining Balance for {new Date().toLocaleString("en-US", { month: "long" })}: $ {balance}</h2>
+      <Table expenses={expenses} />
     </div>
   )
 }

@@ -6,11 +6,12 @@ import ExpenseForm from './ExpenseForm'
 import { Switch, Route } from 'react-router-dom'
 import Search from './Search'
 import MoneyIcon from './MoneyIcon'
+import BorderGif from './BorderGif'
 
 function App() {
   const [search, setUserSearch] = useState("")
   const [expenses, setExpenses] = useState([])
-  const [isSplit, setSplit] = useState(expenses.isSplit);
+  const [isSplit, setSplit] = useState(false);
 
   function onSubmitExpense(newExpense){
     const updatedList = [...expenses, newExpense]
@@ -53,7 +54,7 @@ function App() {
         </Route>
         <Route path="/expenseList">
           <Search search={search} handleSearch={setUserSearch} />
-          <ExpenseList isSplit={isSplit} setSplit={setSplit} handleSplitPrice={handleSplitPrice} handleUndoSplit={handleUndoSplit} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
+          <ExpenseList handleSplitPrice={handleSplitPrice} handleUndoSplit={handleUndoSplit} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
         </Route>
         <Route exact path="/">
           <Home expenses={expenses}/>

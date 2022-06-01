@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function ExpenseItem({name, image, amount, category, id, day, deleteExpense, isSplit, setSplit, handleSplitPrice, handleUndoSplit}){
+function ExpenseItem({name, image, amount, category, id, day, deleteExpense, handleSplitPrice, handleUndoSplit}){
+  const [isSplit, setSplit] = useState(false);
+
+  // useEffect(()=> {
+  //   fetch("http://localhost:4000/expenses")
+  //   .then(res=>res.json())
+  //   .then(data=> handleSplitPrice(data.amount))
+  // })
 
   function toggleSplitPrice(){
     isSplit ? undoSplitAmount() : handleAmount();
@@ -10,7 +17,7 @@ function ExpenseItem({name, image, amount, category, id, day, deleteExpense, isS
   function undoSplitAmount(){
     const splitPrice = {
       amount: amount * 2,
-      isSplit: false,
+      isSplit: isSplit,
     };
 
     fetch(`http://localhost:4000/expenses/${id}`,{
@@ -25,7 +32,7 @@ function ExpenseItem({name, image, amount, category, id, day, deleteExpense, isS
   function handleAmount(){
     const splitPrice = {
       amount: amount / 2,
-      isSplit: true,
+      isSplit: isSplit,
     };
 
     fetch(`http://localhost:4000/expenses/${id}`,{
