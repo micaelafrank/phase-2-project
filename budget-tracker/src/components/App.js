@@ -4,8 +4,8 @@ import NavBar from './NavBar'
 import ExpenseList from './ExpenseList'
 import ExpenseForm from './ExpenseForm'
 import { Switch, Route } from 'react-router-dom'
-import '../App.css';
 import Search from './Search'
+import MoneyIcon from './MoneyIcon'
 
 function App() {
   const [search, setUserSearch] = useState("")
@@ -33,6 +33,7 @@ function App() {
 
   return (
     <div>
+      <MoneyIcon />
       <NavBar/>
       <Switch>
         <Route path="/expenseform">

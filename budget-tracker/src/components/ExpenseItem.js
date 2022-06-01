@@ -16,6 +16,7 @@ function ExpenseItem({name, image, amount, category, id, day, deleteExpense}){
         <p className='expensePrice'>Total: ${amount.toFixed(2)}</p>
         <img className="expenseImage" src={image} alt={name}/>
         <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleSplit}>Split cost</button>
         <p className='expenseCategory'>{category.toUpperCase()}</p>
       </div>
   );

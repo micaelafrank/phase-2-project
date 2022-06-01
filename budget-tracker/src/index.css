@@ -12,6 +12,19 @@ nav{
   margin-bottom: 20px;
 }
 
+.logo{
+  width:5%;
+  height:auto;
+  text-align: center;
+  align-items: center;
+  margin:auto;
+}
+
+.app-name {
+  text-align: center;
+  background-color: lightblue;
+}
+
 label{
   font-size: 19px;
   padding: 15px;
