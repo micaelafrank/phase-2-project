@@ -46,7 +46,6 @@ function App() {
 
   return (
     <div>
-      <MoneyIcon />
       <NavBar/>
       <Switch>
         <Route path="/expenseform">

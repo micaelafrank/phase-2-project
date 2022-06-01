@@ -26,15 +26,19 @@ console.log(formData)
       <div id="home">
             <h1 style={{ color: "firebrick" }}>Add New Expense</h1>
             <form className="new-form" onSubmit={handleSubmit}>
-              <input placeholder="Name.." name="name" value={formData.name} onChange={handleChange}/>
-              <input placeholder="Category.." name="category" value={formData.category} onChange={handleChange}/>
-              <input placeholder="Amount.." name="amount" value={formData.amount} type="number" onChange={handleChange}/>
-              <input placeholder="Image.." name="image" value={formData.image} onChange={handleChange}/>
-              <label>Select day of the month</label>
+              <label>Name:</label>
+              <input className="inputText" placeholder="Name.." name="name" value={formData.name} onChange={handleChange}/>
+              <label>Category:</label>
+              <input className="inputText" placeholder="Category.." name="category" value={formData.category} onChange={handleChange}/>
+              <label>Amount:</label>
+              <input className="inputText" placeholder="Amount.." name="amount" value={formData.amount} type="number" onChange={handleChange}/>
+              <label>Image:</label>
+              <input className="inputText" placeholder="Image.." name="image" value={formData.image} onChange={handleChange}/>
+              <label>Select day of the month:</label>
               <select name="day" value={formData.day} onChange={handleChange}>
                 {daysOption}
               </select>
-              <input type="submit" value="Add Expense" />
+              <input id="submit" style={{ marginTop: "20px"}} type="submit" value="Add Expense" />
             </form>
         </div>
       )

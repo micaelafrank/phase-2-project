@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import BorderGif from './BorderGif';
 import Table from './Table';
+import { NavLink } from 'react-router-dom';
 
 function Home({expenses}) {
 
@@ -58,6 +59,12 @@ function Home({expenses}) {
       <h2>Your Total Expense for {new Date().toLocaleString("en-US", { month: "long" })}: $ {addedExpense}</h2>
       <h2>Your Remaining Balance for {new Date().toLocaleString("en-US", { month: "long" })}: $ {balance}</h2>
       <Table expenses={expenses} />
+      <nav>
+            <NavLink className='link-button' exact to="/expenseform">Add a new expense</NavLink>
+            <NavLink className='link-button'exact to="/expenselist">See Purchases in Details</NavLink>
+      </nav>
+
+
     </div>
   )
 }

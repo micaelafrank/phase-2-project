@@ -1,9 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import MoneyIcon from './MoneyIcon'
 
 function NavBar() {
   return (
-    <div>
+    <div className='nav-bar'>
+      <MoneyIcon />
       <h1 className='app-name'>Budget Tracker by Flatiron Students</h1>
       <nav>
         <NavLink exact to="/">Home</NavLink>

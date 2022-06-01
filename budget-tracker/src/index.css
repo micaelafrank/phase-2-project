@@ -14,11 +14,54 @@
 
 nav{
   margin-bottom: 20px;
-  background-color: white;
+  /* background-color: white; */
+}
+.nav-bar{
+  background-color: lightblue;
+}
+
+form{
+  width: 380px;
+  margin: 30px 100px;
+  height: 600px;
+  background-color:lightblue;
+}
+
+.inputText{
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+input, select{
+  margin-left: 10px;
+  width: 300px;
+  align-items: center;
+  height: 50px;
+}
+
+#submit{
+  font-size: 18px;
+}
+
+label{
+  font-size: 18px;
+  padding-top: 15px;
+  margin: 10px 15px;
+  font-family:'Times New Roman', Times, serif;
 }
 
 table{
   margin-left: 25px;
+  border-collapse: collapse;
+}
+
+tr{
+  border: solid;
+  border-width: 1px 0;
+}
+
+table td tr{
+  border-left: 1px solid #000;
 }
 
 
@@ -47,13 +90,6 @@ table{
   background-color: lightblue;
 }
 
-label{
-  font-size: 19px;
-  padding: 15px;
-  padding-top: 20px;
-  padding-left: 67px;
-  font-family: fantasy;
-}
 
 body {
   font-family: "Playfair Display", serif;
@@ -119,10 +155,6 @@ h6 {
   /* margin-bottom: 1em; */
 }
 
-nav {
-  background-color: cornsilk;
-}
-
 .expenses {
   list-style: none;
 }
@@ -181,10 +213,6 @@ nav {
   margin: 2rem;
 }
 
-/* .expenseName img{
-  height: 100%;
-  width: auto;
-} */
 
 .expense img {
   max-height: 240px;
@@ -220,12 +248,6 @@ nav {
   margin-right: auto;
   width: auto;
 }
-
-/* .expense {
-  margin: 1rem;
-  height: 100%;
-  min-height: 180px;
-} */
 
 .expensePrice{
   font-size: 17px;
@@ -265,44 +287,6 @@ nav a.active {
   background-color: maroon;
   color: white;
 }
-/* 
-#home {
-  height: 50vh;
-  min-height: 400px;
-  background-color: cornsilk;
-}
-
-#home,
-#about,
-#projects {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 1rem;
-}
-
-#about img {
-  max-height: 50%;
-}
-
-#about a {
-  display: block;
-}
-
-#projects {
-  background-color: cornsilk;
-  min-height: 400px;
-}
-
-#project-list {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  max-width: 800px;
-} */
 
 .project-item {
   background-color: white;
@@ -351,145 +335,3 @@ form.new-form {
   font-weight: normal;
   color: firebrick;
 }
-
-
-
-
-/* :root {
-    --green: rgb(39, 189, 39);
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Playfair Display", serif;
-  }
-  
-  h2 {
-    margin-bottom: 1rem;
-  }
-  
-  button {
-    padding: 0.25rem 1rem;
-    font-family: inherit;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button.primary {
-    background-color: var(--green);
-    color: white;
-  }
-  
-  .app {
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  
-  header h1 {
-    font-size: 2.5em;
-    font-weight: 900;
-    text-align: center;
-    padding: 0.5rem 0;
-  }
-  
-  .logo {
-    font-size: 1.25em;
-    padding-left: 0.5rem;
-    color: transparent;
-    text-shadow: 0 0 0 var(--green);
-  }
-  
-  main {
-    padding: 0 1rem;
-  }
-  
-  .new-plant-form {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
-    background-color: rgba(181, 250, 181, 0.5);
-  }
-  
-  .new-plant-form form {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .new-plant-form input {
-    margin-right: 2rem;
-    flex: 1;
-  }
-  
-  .new-plant-form button {
-    width: 150px;
-  }
-  
-  .searchbar {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-weight: bold;
-    display: block;
-  }
-  
-  input {
-    padding: 0.25rem;
-    border: none;
-    font-family: inherit;
-    font-size: 1.2em;
-    border-bottom: 2px solid gray;
-    transition: all 0.2s;
-    width: 100%;
-  }
-  
-  input:focus {
-    outline: none;
-    border-bottom: 2px solid var(--green);
-  }
-  
-  .cards {
-    list-style: none;
-  }
-  
-  .card {
-    margin: 1rem;
-  }
-  
-  .card img {
-    width: 100%;
-  }
-  
-  .card button {
-    margin-top: 0.5rem;
-  }
-  
-  @media (min-width: 768px) {
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
-    .card {
-      width: calc(33% - 2rem);
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .card {
-      width: calc(25% - 2rem);
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .card {
-      width: calc(20% - 2rem);
-    }
-  }
-   */
