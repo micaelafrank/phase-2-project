@@ -4,25 +4,29 @@
       "id": 1,
       "name": "Rent",
       "image": "https://i.ibb.co/60hydCv/rent-check.png",
-      "amount": 1100,
+      "amount": 275,
       "category": "Bills",
-      "day": "1"
+      "day": "1",
+      "isSplit": true,
+      "className": "splitButton"
     },
     {
       "id": 2,
       "name": "Subway (30-day)",
       "image": "https://i.ibb.co/C5b6wG0/MTA-receipt.png",
-      "amount": 121,
+      "amount": 15.375,
       "category": "Transportation",
-      "day": "3"
+      "day": "3",
+      "isSplit": true
     },
     {
       "id": 3,
       "name": "Internet",
       "image": "https://i.ibb.co/3h0BywT/internet.png",
-      "amount": 75,
+      "amount": 100,
       "category": "Bills",
-      "day": "4"
+      "day": "4",
+      "isSplit": false
     },
     {
       "id": 4,
@@ -30,7 +34,8 @@
       "image": "https://i.ibb.co/WvycxY6/donation-KFD.png",
       "amount": 100,
       "category": "Donation",
-      "day": "8"
+      "day": "8",
+      "isSplit": false
     },
     {
       "id": 5,
@@ -38,7 +43,8 @@
       "image": "https://i.ibb.co/FXMyBZp/receipt4.png",
       "amount": 56.03,
       "category": "Food and drink",
-      "day": "8"
+      "day": "8",
+      "isSplit": false
     },
     {
       "id": 6,
@@ -46,7 +52,8 @@
       "image": "https://i.ibb.co/SQLXKQG/receipt3.png",
       "amount": 100,
       "category": "Bills",
-      "day": "10"
+      "day": "10",
+      "isSplit": false
     },
     {
       "id": 7,
@@ -54,7 +61,8 @@
       "image": "https://i.ibb.co/MBk4HDM/cocktails.png",
       "amount": 46.82,
       "category": "Food and drink",
-      "day": "12"
+      "day": "12",
+      "isSplit": true
     },
     {
       "id": 8,
@@ -62,7 +70,8 @@
       "image": "https://i.ibb.co/hK6GwV4/spotify.png",
       "amount": 9.99,
       "category": "Entertainment",
-      "day": "13"
+      "day": "13",
+      "isSplit": false
     },
     {
       "id": 9,
@@ -70,7 +79,8 @@
       "image": "https://i.ibb.co/xjyMwds/hand-receipt.png",
       "amount": 7,
       "category": "Transportation",
-      "day": "15"
+      "day": "15",
+      "isSplit": false
     },
     {
       "id": 10,
@@ -78,7 +88,8 @@
       "image": "https://i.ibb.co/rQsj21h/phonebill-new.png",
       "amount": 49.07,
       "category": "Bills",
-      "day": "18"
+      "day": "18",
+      "isSplit": false
     },
     {
       "id": 11,
@@ -86,7 +97,8 @@
       "image": "https://i.ibb.co/MRhsV7B/book.png",
       "amount": 14.99,
       "category": "Books",
-      "day": "18"
+      "day": "18",
+      "isSplit": false
     },
     {
       "id": 12,
@@ -94,7 +106,8 @@
       "image": "https://i.ibb.co/RYbDw3G/bank-withdrawal.png",
       "amount": 83,
       "category": "Bank",
-      "day": "19"
+      "day": "19",
+      "isSplit": false
     },
     {
       "id": 13,
@@ -102,7 +115,8 @@
       "image": "https://i.ibb.co/HY6y0JG/uniqloreceipt.png",
       "amount": 49.8,
       "category": "Shopping",
-      "day": "19"
+      "day": "19",
+      "isSplit": false
     },
     {
       "id": 14,
@@ -110,7 +124,8 @@
       "image": "https://i.ibb.co/TK7PdQM/citibike.png",
       "amount": 9.35,
       "category": "Transportation",
-      "day": "20"
+      "day": "20",
+      "isSplit": false
     },
     {
       "id": 15,
@@ -118,7 +133,8 @@
       "image": "https://i.ibb.co/BNKM1ML/pharmacy-new.png",
       "amount": 9.99,
       "category": "Health",
-      "day": "21"
+      "day": "21",
+      "isSplit": false
     },
     {
       "id": 16,
@@ -126,7 +142,8 @@
       "image": "https://i.ibb.co/ws2RTFm/tjs-new.png",
       "amount": 18.79,
       "category": "Food and drink",
-      "day": "21"
+      "day": "21",
+      "isSplit": false
     },
     {
       "id": 17,
@@ -134,7 +151,8 @@
       "image": "https://i.ibb.co/r54r1zv/costco.png",
       "amount": 283.02,
       "category": "Food and drink",
-      "day": "23"
+      "day": "23",
+      "isSplit": false
     },
     {
       "id": 18,
@@ -142,7 +160,8 @@
       "image": "https://i.ibb.co/gvrSJPn/laundry.png",
       "amount": 16.03,
       "category": "Clothes",
-      "day": "27"
+      "day": "27",
+      "isSplit": false
     },
     {
       "id": 19,
@@ -150,7 +169,23 @@
       "image": "https://i.ibb.co/PF7Wv2y/03wholefoods2-jumbo.jpg",
       "amount": 40.3,
       "category": "Food and drink",
-      "day": "28"
+      "day": "28",
+      "isSplit": false
+    },
+    {
+      "name": "micaela",
+      "category": "food",
+      "amount": 0.41015625,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTxlaA9i6_yP6QrSjUZVnNlG5Tij0-dlQm2BLmxsP67u9krybPiaPCOPx186XIFrK_FDRgU1Qx10qfsJKG08Qp2ZVuOWzPKnI0QxUCRp8SehxRIXyogW_Dv&usqp=CAE",
+      "day": "30",
+      "id": 20,
+      "isSplit": true
+    }
+  ],
+  "budget": [
+    {
+      "id": 1,
+      "amount": 30000
     }
   ]
 }

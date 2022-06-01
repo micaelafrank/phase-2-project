@@ -41,6 +41,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
+
 button {
   position: relative;
   background-color: #e04b52;
@@ -67,6 +68,23 @@ button:hover {
   background-color: whitesmoke;
   border: #e04b52 solid 1px;
   color: #e04b52;
+}
+
+.splitButton{
+  position: relative;
+  background-color: whitesmoke;
+  border: #e04b52 solid 1px;
+  border-radius: 5px;
+  height: 30px;
+  line-height: 30px;
+  width: max-content;
+  padding-left: 10px;
+  padding-right: 10px;
+  color:#e04b52;
+  font-size: 14px;
+  justify-self: center;
+  text-align: center;
+  justify-content: center;
 }
 
 h1,
@@ -265,6 +283,10 @@ nav a.active {
   background-color: white;
   padding: 2rem;
   margin: 1rem;
+}
+
+.low-balance{
+  color: red;
 }
 
 .technologies span {

@@ -9,7 +9,9 @@ import MoneyIcon from './MoneyIcon'
 
 function App() {
   const [search, setUserSearch] = useState("")
-  const [expenses, setExpenses] = useState([]);
+  const [expenses, setExpenses] = useState([])
+  const [isSplit, setSplit] = useState(expenses.isSplit);
+
   function onSubmitExpense(newExpense){
     const updatedList = [...expenses, newExpense]
     setExpenses(updatedList)
@@ -23,6 +25,16 @@ function App() {
   
     function deleteExpense(id){
       const updatedList = expenses.filter((expense) => expense.id !== id);
+      setExpenses(updatedList);
+    }
+
+    function handleSplitPrice(itemToSplit){
+      const updatedList = expenses.map((expense) => expense.id === itemToSplit.id ? itemToSplit : expense );
+      setExpenses(updatedList);
+    }
+
+    function handleUndoSplit(itemToSplit){
+      const updatedList = expenses.map((expense) => expense.id === itemToSplit.id ? itemToSplit : expense );
       setExpenses(updatedList);
     }
 
@@ -41,10 +53,10 @@ function App() {
         </Route>
         <Route path="/expenseList">
           <Search search={search} handleSearch={setUserSearch} />
-          <ExpenseList deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
+          <ExpenseList isSplit={isSplit} setSplit={setSplit} handleSplitPrice={handleSplitPrice} handleUndoSplit={handleUndoSplit} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
         </Route>
         <Route exact path="/">
-          <Home/>
+          <Home expenses={expenses}/>
         </Route>
         <Route path="*">
           <h1>404 not found</h1>
