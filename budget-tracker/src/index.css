@@ -8,6 +8,18 @@
   box-sizing: border-box;
 }
 
+nav{
+  margin-bottom: 20px;
+}
+
+label{
+  font-size: 19px;
+  padding: 15px;
+  padding-top: 20px;
+  padding-left: 67px;
+  font-family: fantasy;
+}
+
 body {
   font-family: "Playfair Display", serif;
 }
@@ -21,17 +33,22 @@ button {
   background-color: #e04b52;
   border: none;
   border-radius: 5px;
-  height: 3rem;
+  height: 30px;
+  line-height: 30px;
   width: max-content;
+  padding-left: 10px;
+  padding-right: 10px;
   color: whitesmoke;
-  font-size: 18px;
+  font-size: 14px;
   justify-self: center;
+  text-align: center;
+  justify-content: center;
 }
 
-/* .buttonContainer {
+.buttonContainer {
   text-align: center;
   padding: 1rem;
-} */
+}
 
 button:hover {
   background-color: whitesmoke;
@@ -46,11 +63,7 @@ h4,
 h5,
 h6 {
   font-family: 'Times New Roman', Times, serif;
-  margin-bottom: 1em;
-}
-
-p {
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
 }
 
 nav {
@@ -61,24 +74,26 @@ nav {
   list-style: none;
 }
 
-.expensePrice{
-  padding-bottom: 10px;
-}
-
-.expense {
-  margin: 1rem;
-}
-
 .expense .expenseName{
   color: firebrick;
-  font-size: 30px;
+  font-size: 28px;
+  padding-top: 15px;
+  line-height: 10px;
 }
 
-.expense img {
-  height: 100%;
+.expenseImage{
   max-height: 250px;
+  height: 100%;
+  text-align: center;
+  justify-content: space-evenly;
   width: auto;
-  max-width: 160px;
+  max-width: 170px;
+}
+
+.expensePurchaseDate{
+  line-height: 2px;
+  font-size: 18px;
+  color: firebrick;
 }
 
 .expense button {
@@ -113,11 +128,17 @@ nav {
 }
 
 .expenseName img{
-  /* font-size: 14px; */
-  height: 6rem;
+  height: 100%;
   width: auto;
-  color: firebrick;
 }
+
+/* .expense img { */
+  /* max-height: 250px;
+  min-height: 180px; */
+  /* justify-content: space-evenly; */
+  /* width: auto;
+  max-width: 160px; */
+/* } */
 
 .expense{
   text-align: center;
@@ -131,16 +152,39 @@ nav {
 
 .expenseImage{
   justify-self: center;
-  height: 12rem;
+  justify-items:center;
+  height: 100%;
+  flex: 1;
+  justify-content: space-between;
+  border: 1px solid black;
+  align-items: center;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: auto;
 }
 
+/* .expense {
+  margin: 1rem;
+  height: 100%;
+  min-height: 180px;
+} */
+
 .expensePrice{
-  font-size: 15px;
+  font-size: 17px;
+  line-height: 2px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  font-weight: bold;
 }
 
 .expenseCategory{
-  font-size: 15px;
+  font-size: 17px;
+  color: firebrick;
+  font-family:fantasy;
+  font-weight: bold;
+  text-shadow: 1px 1px gray;
 }
 
 nav a {
@@ -156,15 +200,16 @@ nav a {
 
 nav a:hover,
 nav a:active {
-  color: tomato;
+  color: maroon;
   border-bottom: 2px solid tomato;
+  cursor:pointer;
 }
 
 nav a.active {
-  background-color: tomato;
+  background-color: maroon;
   color: white;
 }
-
+/* 
 #home {
   height: 50vh;
   min-height: 400px;
@@ -201,7 +246,7 @@ nav a.active {
   flex-direction: column;
   width: 100%;
   max-width: 800px;
-}
+} */
 
 .project-item {
   background-color: white;
@@ -232,6 +277,19 @@ form.new-form {
   padding: 1em;
   display: flex;
   flex-direction: column;
+}
+
+.totalMoney{
+  text-align: center;
+  color: firebrick;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.receipts{
+  margin-left: 35px;
+  font-weight: normal;
+  color: firebrick;
 }
 
 

@@ -5,24 +5,31 @@ import ExpenseList from './ExpenseList'
 import ExpenseForm from './ExpenseForm'
 import { Switch, Route } from 'react-router-dom'
 import '../App.css';
+import Search from './Search'
 
 function App() {
-
+  const [search, setUserSearch] = useState("")
   const [expenses, setExpenses] = useState([]);
   function onSubmitExpense(newExpense){
-    const updatedList = [...expenses,newExpense]
+    const updatedList = [...expenses, newExpense]
     setExpenses(updatedList)
   }
 
   useEffect(() => {
     fetch("http://localhost:4000/expenses")
     .then(res => res.json())
-    .then(data=> setExpenses(data))}, [])
+    .then(data=> setExpenses(data))
+  }, [])
   
     function deleteExpense(id){
       const updatedList = expenses.filter((expense) => expense.id !== id);
       setExpenses(updatedList);
     }
+
+    const searchReceipts = expenses.filter((expense) => {
+      return (expense.name.toLowerCase().includes(search.toLowerCase())) || 
+      (expense.category.toLowerCase().includes(search.toLowerCase()))
+    })
 
   return (
     <div>
@@ -32,7 +39,8 @@ function App() {
           <ExpenseForm onSubmitExpense={onSubmitExpense}/>
         </Route>
         <Route path="/expenseList">
-          <ExpenseList deleteExpense={deleteExpense} expenses={expenses} setExpenses={setExpenses} />
+          <Search search={search} handleSearch={setUserSearch} />
+          <ExpenseList deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
         </Route>
         <Route exact path="/">
           <Home/>

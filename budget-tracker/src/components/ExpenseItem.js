@@ -12,14 +12,11 @@ function ExpenseItem({name, image, amount, category, id, day, deleteExpense}){
   return (
       <div className="expense">
         <h2 className="expenseName">{name}</h2>
-        <p className='expensePrice'>Total: ${amount}</p>
-        <img className="expenseImage"
-          src={image}
-          alt={name}
-        />
-        <p>Purchased on {new Date().toLocaleString("en-US", { month: "long" })} {day}</p>
-        <p className='expenseCategory'>{category.toUpperCase()}</p>
+        <p className="expensePurchaseDate">Purchased on {new Date().toLocaleString("en-US", { month: "long" })} {day}</p>
+        <p className='expensePrice'>Total: ${amount.toFixed(2)}</p>
+        <img className="expenseImage" src={image} alt={name}/>
         <button onClick={handleDelete}>Delete</button>
+        <p className='expenseCategory'>{category.toUpperCase()}</p>
       </div>
   );
 

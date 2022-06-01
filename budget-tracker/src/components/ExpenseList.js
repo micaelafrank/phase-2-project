@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import ExpenseItem from './ExpenseItem'
 
-function ExpenseList({expenses, deleteExpense}) {
-
-  const [addedExpense, setAddedExpense] = useState(0);
-  
+function ExpenseList({expenses, deleteExpense, setUserSearch}) {
+  const [addedExpense, setAddedExpense] = useState(0);  
   const listOfExpenses = expenses.map((expense) => (
     <ExpenseItem
     key={expense.id}
@@ -15,6 +13,7 @@ function ExpenseList({expenses, deleteExpense}) {
     category={expense.category}
     day={expense.day}
     deleteExpense={deleteExpense}
+    handleSearch={setUserSearch}
     />
   ))
 
@@ -25,11 +24,13 @@ function ExpenseList({expenses, deleteExpense}) {
     },[expenses])
 
   return (
-    <div className="expenseContainer">
-      <h1>Total spent for this month: ${addedExpense}</h1>
-      <h2>Receipts:</h2>
+    <React.Fragment>
+      <div className="expenseContainer">
+        <h1 className='totalMoney'>Total money spent this month: ${addedExpense}</h1>
+        <h2 className="receipts">Receipts:</h2>
           {listOfExpenses}
-    </div>
+      </div>
+    </React.Fragment>
   )
 }
 
