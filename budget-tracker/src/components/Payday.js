@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import ExpenseItem from './ExpenseItem'
-import { NavLink } from 'react-router-dom';
 
-function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice}) {
+function Payday({paychecks, deleteExpense}) {
   const [addedExpense, setAddedExpense] = useState(0);  
   const listOfExpenses = expenses.map((expense) => (
     <ExpenseItem
@@ -22,26 +20,17 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice})
   ))
 
   useEffect(()=>{
-    window.scrollTo(0, 0);
-  }, ["/"]);
-
-  useEffect(()=>{
     const totalExpense = expenses.reduce((accumulator,expense)=>{
-      return expense.amount<0?accumulator:expense.amount+accumulator},0)
+      return expense.amount+accumulator},0)
       setAddedExpense(totalExpense.toFixed(2))
     },[expenses])
 
   return (
-    <div className='expenses'>
       <div className="expenseContainer">
         <h1 className='totalMoney'>Total money spent this month: ${addedExpense}</h1>
         <h2 className="receipts">Receipts:</h2>
           {listOfExpenses}
-        <nav className="homeNav">
-            <NavLink className='link-button' exact to="/">Return to homepage</NavLink>
-        </nav>
       </div>
-    </div>
   )
 }
 

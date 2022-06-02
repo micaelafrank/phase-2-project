@@ -1,27 +1,25 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import BorderGif from './BorderGif'
 import { NavLink } from 'react-router-dom'
 
 function ExpenseForm({onSubmitExpense}) {
-  const [ formData, setFormData ] = useState({name:"", category:"", amount:"", image:"", day:"1"})
-  
-  useEffect(()=>{
-    window.scrollTo(0, 0);
-  }, ["/"]);
-
+  const [ formData, setFormData ] = useState({name:"", category:"", amount:0, image:"", day:"1"})
+  const [ paycheck, setPaycheck ] = useState(false)
   function handleChange(e){
     let key=e.target.name
-    let value= e.target.type==='number' ? parseFloat(e.target.value) : e.target.value
+    let value= e.target.type==='number' ? parseFloat(e.target.value): e.target.value
     setFormData((formData)=>({...formData, [key]:value}))
   }
   function handleSubmit(e){
     e.preventDefault()
+    let newFormData={}
+    paycheck? newFormData={...formData, "amount":formData.amount*-1}: newFormData=formData
     fetch(`http://localhost:4000/expenses`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
         },
-      body:JSON.stringify(formData),
+      body:JSON.stringify(newFormData),
     })
         .then(res=>res.json())
         .then(newExpense=>onSubmitExpense(newExpense))
@@ -33,7 +31,8 @@ function ExpenseForm({onSubmitExpense}) {
       <div id="home">
             <BorderGif/>
             <h1 style={{ color: "firebrick" }}>Add Your Two Cents</h1>
-            <h2 style={{ color: "firebrick" }}>Submit An Expense</h2>
+            <button onClick={()=>setPaycheck(!paycheck)}>{paycheck?"Switch to submit an expense":"Switch to add a paycheck"}</button>
+            <h2 style={{ color: "firebrick" }}>{paycheck?"Add A Paycheck":"Submit An Expense"}</h2>
             <form className="new-form" onSubmit={handleSubmit}>
               <label>Name:</label>
               <input className="inputText" placeholder="Name.." name="name" value={formData.name} onChange={handleChange}/>
@@ -47,10 +46,10 @@ function ExpenseForm({onSubmitExpense}) {
               <select name="day" value={formData.day} onChange={handleChange}>
                 {daysOption}
               </select>
-              <input id="submit" style={{ marginTop: "20px"}} type="submit" value="Add Expense" />
+              <input id="submit" style={{ marginTop: "20px"}} type="submit" value={paycheck?"Add Paycheck":"Add Expense"} />
             </form>
             <nav className="homeNav">
-            <NavLink className='link-button' exact to="/">Return to homepage</NavLink>
+              <NavLink className='link-button' exact to="/">Return to homepage</NavLink>
             </nav>
         </div>
       )

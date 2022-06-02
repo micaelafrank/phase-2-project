@@ -39,12 +39,18 @@ table{
   padding-top: 15px;
   font-size: 28px;
   line-height: 1;
-  font-weight: normal;
+  font-weight: bolder;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: -1px;
 }
+
 .subtitle2{
   color: rgb(79, 160, 100);
   text-shadow: 1px 1px black;
   font-size: 26px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
 }
 #home h3{
   line-height: 1.5;
@@ -59,7 +65,6 @@ table{
 .nav-bar{
   padding-top: 20px;
   margin-bottom: 15px;
-  background-color: rgb(197, 231, 242);
 }
 form{
   width: 380px;
@@ -116,6 +121,7 @@ table td tr{
 } */
 .coinsImage{
   height: 200px;
+  align-items: left;
   width: 100%;
   position:relative;
   width: auto;
@@ -135,9 +141,9 @@ table td tr{
   padding-top: 10px;
 }
 .app-name {
-  text-align: center;
-  background-color: rgb(197, 231, 242);
-  font-size: 60px;
+  font-size: 80px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: -5px;
 }
 body {
   font-family: "Playfair Display", serif;
@@ -145,9 +151,7 @@ body {
 h2 {
   margin-bottom: 1rem;
 }
-.greenButton{
-  background-color: green;
-}
+
 button {
   position: relative;
   background-color: #e04b52;
@@ -223,23 +227,46 @@ h6 {
   font-family: 'Times New Roman', Times, serif;
   /* margin-bottom: 1em; */
 }
-.expenses {
-  list-style: none;
+
+.greenButton{
+  background-color: green;
 }
-.expense .expenseName{
-  color: firebrick;
-  font-size: 27px;
-  padding-top: 15px;
-  padding-bottom: 5px;
-  line-height: 1;
-}
-.income .incomeName{
+
+.greenButton:hover{
+  position: relative;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  line-height: 30px;
+  width: max-content;
+  padding-left: 10px;
+  padding-right: 10px;
   color: green;
-  font-size: 27px;
-  padding-top: 15px;
-  padding-bottom: 5px;
-  line-height: 1;
+  font-size: 15px;
+  justify-self: center;
+  text-align: center;
+  justify-content: center;
+  border: green solid 1px;
 }
+
+/* .expenses {
+  list-style: none;
+} */
+
+.expenseName{
+  color: firebrick;
+  font-size: 29px;
+  padding-top: 10px;
+  line-height: .5;
+}
+.incomeName{
+  color: green;
+  font-size: 29px;
+  padding-top: 10px;
+  line-height: .5;
+}
+
 .homepageForm{
   height: 150px;
 }
@@ -253,13 +280,22 @@ h6 {
   margin: 1rem 2rem;
 }
 
-.headerContainer{
-  display: flex;
-  align-items: center;
+.income{
   text-align: center;
-  justify-content:center;
+  border: green solid 2px;
+  padding: 1rem;
+  width: 15rem;
+  height: 33rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
 }
 
+.headerContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
 
 .expenseImage{
   max-height: 250px;
@@ -273,14 +309,16 @@ h6 {
   margin: auto;
 }
 .expensePurchaseDate{
-  line-height: 2px;
   font-size: 18px;
   color: firebrick;
+  padding-top: 0;
+  flex-wrap: wrap;
 }
 .incomePurchaseDate{
-  line-height: 2px;
   font-size: 18px;
+  padding-top: 0;
   color: green;
+  flex-wrap: wrap;
 }
 
 .incomeTable{
@@ -288,48 +326,83 @@ h6 {
   background-color: rgb(229, 248, 229);
 }
 
-.expense button, .income button {
+.expense button{
   margin-top: 0.2rem;
 }
+
+.income button {
+  margin-top: 0.2rem;
+}
+
 @media (min-width: 768px) {
   .expenses {
     display: flex;
     flex-wrap: wrap;
   }
-  .card {
+  .expense, .income {
     width: calc(33% - 2rem);
   }
 }
 @media (min-width: 1024px) {
-  .expense, .income {
+  .expense {
     width: calc(25% - 2rem);
   }
 }
+
+@media (min-width: 1024px) {
+  .income {
+    width: calc(25% - 2rem);
+  }
+}
+
 @media (min-width: 1200px) {
-  .expense, .income {
+  .income {
     width: calc(20% - 2rem);
   }
 }
+
+@media (min-width: 1200px) {
+  .expense {
+    width: calc(20% - 2rem);
+  }
+}
+
 .expenseContainer{
   margin: 2rem;
 }
 
-.expense img, .income img {
+.expense img{
   max-height: 240px;
   align-items: center;
   margin: auto;
   min-height: 160px;
-  max-width: 190px;
-  width: auto;
+  /* max-width: auto; */
+  width: 100%;
   display: block;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.income img {
+  max-height: 240px;
+  align-items: center;
+  margin: auto;
+  min-height: 160px;
+  /* max-width: 190px; */
+  width: 100%;
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 5px;
 }
 
 .expenseImage{
+  margin-top: 2px;
+  margin-bottom: 5px;
   justify-self: center;
   justify-items:center;
   height: 100%;
   flex: 1;
-  justify-content: space-between;
+  justify-content: center;
   border: 1px solid black;
   align-items: center;
   text-align: center;
@@ -340,12 +413,12 @@ h6 {
 }
 
 .expensePrice{
-  font-size: 17px;
-  line-height: 3px;
-  padding-top: 15px;
+  font-size: 18px;
+  line-height: 1;
   padding-bottom: 5px;
   font-weight: bold;
 }
+
 .expenseCategory{
   font-size: 17px;
   color: firebrick;
@@ -424,13 +497,4 @@ form.new-form {
 .receipts{
   padding-left: 23px;
   padding-top: 10px;
-}
-.income{
-  text-align: center;
-  border: green solid 2px;
-  padding: 1rem;
-  width: 15rem;
-  height: 33rem;
-  display: inline-grid;
-  margin: 1rem 2rem;
 }

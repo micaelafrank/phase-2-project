@@ -27,12 +27,12 @@ function ExpenseItem({name, image, amount, category, id, day, isSplit, deleteExp
     </button>)
   return (
       <div className={(amount < 0) ? "income" : "expense"}>
-        <h2 className={(amount < 0) ? "incomeName" : "expenseName"}>{name}</h2>
-        <p className={(amount < 0) ? "incomePurchaseDate" : "expensePurchaseDate"}>{(amount < 0) ? "Got paid on" : "Purchased on"} {new Date().toLocaleString("en-US", { month: "long" })} {day}</p>
+        <h2 style={{ marginBottom: "3px" }} className={(amount < 0) ? "incomeName" : "expenseName"}>{name}</h2>
+        <p style={{ marginTop: "3px" }} className={(amount < 0) ? "incomePurchaseDate" : "expensePurchaseDate"}>{(amount < 0) ? "Got paid on" : "Purchased on"} {new Date().toLocaleString("en-US", { month: "long" })} {day}</p>
         <p className='expensePrice'>Total: ${(amount < 0) ? (dollarAmount * -1) : dollarAmount}</p>
         <img className="expenseImage" src={image} alt={name}/>
-        <button className={(amount < 0) ? "greenButton" : null} onClick={handleDelete}>Delete</button>
-        <div>
+        <button style={{ marginTop: "5px", marginBottom: "0" }} className={(amount < 0) ? "greenButton" : null} onClick={handleDelete}>Delete</button>
+        <div style={{ marginTop: "0" }}>
           {showButton}
         </div>
         <p className={(amount < 0) ? "greenCategory" : "expenseCategory"}>{category.toUpperCase()}</p>
