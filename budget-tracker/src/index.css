@@ -161,6 +161,7 @@ table td tr{
   padding-top: 10px;
 }
 
+
 .app-name {
   text-align: center;
   background-color: rgb(197, 231, 242);
@@ -175,6 +176,9 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.greenButton{
+  background-color: green;
+}
 
 button {
   position: relative;
@@ -270,6 +274,14 @@ h6 {
   line-height: 1;
 }
 
+.income .incomeName{
+  color: green;
+  font-size: 27px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  line-height: 1;
+}
+
 .homepageForm{
   height: 150px;
 }
@@ -297,6 +309,12 @@ h6 {
   line-height: 4px;
   font-size: 18px;
   color: firebrick;
+}
+
+.incomePurchaseDate{
+  line-height: 4px;
+  font-size: 18px;
+  color: green;
 }
 
 .expense button, .payday button {
@@ -330,8 +348,7 @@ h6 {
   margin: 2rem;
 }
 
-
-.expense img {
+.expense img, .income img {
   max-height: 240px;
   align-items: center;
   margin: auto;
@@ -372,6 +389,14 @@ h6 {
   text-shadow: .5px .5px gray;
 }
 
+.greenCategory{
+  font-size: 17px;
+  color: green;
+  font-family:fantasy;
+  font-weight: bold;
+  text-shadow: .5px .5px gray;
+}
+
 nav a, .link-button a{
   display: inline-block;
   padding: 0.25rem;
@@ -381,6 +406,10 @@ nav a, .link-button a{
   color: firebrick;
   border-bottom: 3px solid firebrick;
   transition: 0.1s;
+}
+
+input#search{
+  height: 40px;
 }
 
 .link-button a:hover, .link-button a:active{
@@ -445,4 +474,14 @@ form.new-form {
 .receipts{
   padding-left: 23px;
   padding-top: 10px;
+}
+
+.income{
+  text-align: center;
+  border: green solid 2px;
+  padding: 1rem;
+  width: 15rem;
+  height: 33rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
 }

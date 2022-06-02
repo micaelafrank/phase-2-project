@@ -5,9 +5,7 @@ import ExpenseList from './ExpenseList'
 import ExpenseForm from './ExpenseForm'
 import { Switch, Route } from 'react-router-dom'
 import Search from './Search'
-import MoneyIcon from './MoneyIcon'
-import BorderGif from './BorderGif'
-import Coins from './Coins'
+
 
 function App() {
   const [search, setUserSearch] = useState("")
@@ -33,11 +31,6 @@ function App() {
       const updatedList = expenses.map((expense) => expense.id === itemToSplit.id ? itemToSplit : expense );
       setExpenses(updatedList);
     }
-
-    // function handleUndoSplit(itemToSplit){
-    //   const updatedList = expenses.map((expense) => expense.id === itemToSplit.id ? itemToSplit : expense );
-    //   setExpenses(updatedList);
-    // }
 
     const searchReceipts = expenses.filter((expense) => {
       return (expense.name.toLowerCase().includes(search.toLowerCase())) || 
