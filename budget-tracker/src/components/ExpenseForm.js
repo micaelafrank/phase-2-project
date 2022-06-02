@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import BorderGif from './BorderGif'
-
 function ExpenseForm({onSubmitExpense}) {
   const [ formData, setFormData ] = useState({name:"", category:"", amount:"", image:"", day:"1"})
   function handleChange(e){
