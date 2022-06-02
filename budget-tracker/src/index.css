@@ -136,6 +136,7 @@ table td tr{
 .app-name {
   text-align: center;
   background-color: rgb(197, 231, 242);
+  font-size: 45px;
 }
 body {
   font-family: "Playfair Display", serif;
@@ -250,25 +251,37 @@ h6 {
   display: inline-grid;
   margin: 1rem 2rem;
 }
+
+.headerContainer{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+
 .expenseImage{
   max-height: 250px;
   height: 100%;
-  text-align: center;
-  justify-content: space-evenly;
   width: auto;
   max-width: 170px;
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 .expensePurchaseDate{
-  line-height: 4px;
+  line-height: 2px;
   font-size: 18px;
   color: firebrick;
 }
 .incomePurchaseDate{
-  line-height: 4px;
+  line-height: 2px;
   font-size: 18px;
   color: green;
 }
-.expense button, .payday button {
+.expense button, .income button {
   margin-top: 0.2rem;
 }
 @media (min-width: 768px) {
@@ -281,18 +294,19 @@ h6 {
   }
 }
 @media (min-width: 1024px) {
-  .expense {
+  .expense, .income {
     width: calc(25% - 2rem);
   }
 }
 @media (min-width: 1200px) {
-  .expense {
+  .expense, .income {
     width: calc(20% - 2rem);
   }
 }
 .expenseContainer{
   margin: 2rem;
 }
+
 .expense img, .income img {
   max-height: 240px;
   align-items: center;
@@ -302,6 +316,7 @@ h6 {
   width: auto;
   display: block;
 }
+
 .expenseImage{
   justify-self: center;
   justify-items:center;
@@ -316,6 +331,7 @@ h6 {
   margin-right: auto;
   width: auto;
 }
+
 .expensePrice{
   font-size: 17px;
   line-height: 3px;

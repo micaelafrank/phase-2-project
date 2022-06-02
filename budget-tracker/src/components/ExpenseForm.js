@@ -1,7 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import BorderGif from './BorderGif'
+import { useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
 function ExpenseForm({onSubmitExpense}) {
   const [ formData, setFormData ] = useState({name:"", category:"", amount:"", image:"", day:"1"})
+  
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  }, ["/"]);
+
   function handleChange(e){
     let key=e.target.name
     let value= e.target.type==='number' ? parseFloat(e.target.value) : e.target.value
@@ -42,6 +50,9 @@ function ExpenseForm({onSubmitExpense}) {
               </select>
               <input id="submit" style={{ marginTop: "20px"}} type="submit" value="Add Expense" />
             </form>
+            <nav className="homeNav">
+            <NavLink className='link-button' exact to="/">Return to homepage</NavLink>
+            </nav>
         </div>
       )
 }

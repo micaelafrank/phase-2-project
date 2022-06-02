@@ -198,12 +198,20 @@
       "category": "Paychecks",
       "day": "30",
       "isSplit": false
+    },
+    {
+      "name": "Monkey",
+      "category": "Stuffed animal",
+      "amount": 30.99,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTxlaA9i6_yP6QrSjUZVnNlG5Tij0-dlQm2BLmxsP67u9krybPiaPCOPx186XIFrK_FDRgU1Qx10qfsJKG08Qp2ZVuOWzPKnI0QxUCRp8SehxRIXyogW_Dv&usqp=CAE",
+      "day": "30",
+      "id": 23
     }
   ],
   "budget": [
     {
       "id": 1,
-      "amount": 4000
+      "amount": 1000
     }
   ]
 }

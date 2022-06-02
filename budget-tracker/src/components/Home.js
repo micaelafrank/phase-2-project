@@ -1,17 +1,32 @@
 import React, {useState,useEffect} from 'react'
 import Table from './Table';
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 function Home({expenses}) {
   const current = new Date();
   const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
   const [budget, setBudget] = useState({amount:""})
   const [displayBudget, setDisplayBudget] = useState(0)
   const [addedExpense, setAddedExpense] = useState(0);
+  const [addedPaychecks, setAddedPaychecks] = useState(0);
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  }, ["/"]);
+
   useEffect(()=>{
     const totalExpense = expenses.reduce((accumulator,expense)=>{
-      return expense.amount+accumulator},0)
+      return expense.amount<0?accumulator:expense.amount+accumulator},0)
       setAddedExpense(totalExpense.toFixed(2))
     },[expenses])
+
+    useEffect(()=>{
+      const totalEarnings = expenses.reduce((accumulator,expense)=>{
+        return expense.amount>0?accumulator:expense.amount+accumulator},0)
+        setAddedPaychecks(totalEarnings.toFixed(2))
+      },[expenses])
+    
   useEffect(()=>{
     fetch(`http://localhost:4000/budget/1`)
       .then(res=>res.json())
@@ -35,7 +50,7 @@ function Home({expenses}) {
         .then(data=>setDisplayBudget(data.amount))
     setBudget({amount:""})
   }
-  let balance=<span className={(displayBudget-addedExpense).toFixed(2)<0?'low-balance':'balance'}>{(displayBudget-addedExpense).toFixed(2)}</span>
+  let balance=<span className={(displayBudget+Math.abs(addedPaychecks)-addedExpense).toFixed(2)<0?'low-balance':'balance'}>{(displayBudget+Math.abs(addedPaychecks)-addedExpense).toFixed(2)}</span>
   return (
     <div id="home">
       {/* <Coins/> */}
@@ -51,6 +66,7 @@ function Home({expenses}) {
         <input className="homepageBudget" type="submit"/>
       </form>
       <h3>Your budget for {new Date().toLocaleString("en-US", { month: "long" })}: ${displayBudget}</h3>
+      <h3>Your earnings for {new Date().toLocaleString("en-US", { month: "long" })}: ${Math.abs(addedPaychecks)}</h3>
       <h3>Your total spending in {new Date().toLocaleString("en-US", { month: "long" })} so far: ${addedExpense}</h3>
       <h3>Your remaining balance for {new Date().toLocaleString("en-US", { month: "long" })}: ${balance}</h3>
       <Table expenses={expenses} />

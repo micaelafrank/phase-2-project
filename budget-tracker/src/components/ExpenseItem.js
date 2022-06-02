@@ -1,4 +1,5 @@
 import React from 'react';
+
 function ExpenseItem({name, image, amount, category, id, day, isSplit, deleteExpense, handleSplitPrice}){
     function toggleSplitPrice(){
       const splitPrice = {

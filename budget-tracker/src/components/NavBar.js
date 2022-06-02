@@ -4,8 +4,11 @@ import Coins from './Coins'
 function NavBar() {
   return (
     <div className='nav-bar'>
-      <Coins/>
-      <h1 className='app-name'>Budget Tracker</h1>
+      <div className="headerContainer">
+        <h1 className='app-name'>Budget</h1>
+        <Coins/>
+        <h1 className="app-name">Tracker</h1>
+      </div>
       <h2 className='subtitle'style={{ textAlign:"center" }}>Helping you save money for a rainy day</h2>
       <h2 className='subtitle2'style={{ textAlign:"center" }}>This month's forecast: Make it rain</h2>
       <nav style={{ textAlign:"center" }}>
