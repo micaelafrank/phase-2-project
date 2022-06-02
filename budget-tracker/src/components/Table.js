@@ -8,7 +8,7 @@ function Table({expenses}){
         <tr key={expense.id}>
             <td style={{ paddingRight: "20px"}}>{month}-{expense.day}-{year}</td>
             <td style={{ padding: "0px 20px"}}>{expense.name}</td>
-            <td>${expense.amount}</td>
+            <td>${expense.amount.toFixed(2)}</td>
             <td style={{ paddingLeft: "20px"}}>{expense.category}</td>
         </tr>
     ))

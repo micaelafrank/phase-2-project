@@ -2,29 +2,82 @@
   --green: rgb(39, 189, 39);
 }
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.new-form{
+  height: 570px;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form label{
+  align-items: center;
+  margin: 0;
+  justify-content: center;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 #home{
   background-color: white;
+  align-items: center;
+  text-align: center;
 }
 
-nav{
-  margin-bottom: 20px;
-  /* background-color: white; */
+.formText{
+  padding-bottom: 10px;
 }
+
+.subtitle{
+  padding-top: 15px;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.subtitle2{
+  color: rgb(202, 161, 56);
+  text-shadow: 1px 1px black;
+  font-weight: normal;
+}
+
+#home h3{
+  line-height: 1.5;
+  font-weight: bold;
+  color:rgb(92, 138, 153);
+}
+
+.homepageBudget{
+  height: 40px;
+  margin-bottom: 8px;
+  color: black;
+}
+
 .nav-bar{
-  background-color: lightblue;
+  padding-top: 20px;
+  margin-bottom: 15px;
+  background-color: rgb(197, 231, 242);
 }
 
 form{
   width: 380px;
   margin: 30px 100px;
   height: 600px;
-  background-color:lightblue;
+  background-color:rgb(197, 231, 242);
 }
 
 .inputText{
@@ -50,14 +103,21 @@ label{
   font-family:'Times New Roman', Times, serif;
 }
 
-table{
-  margin-left: 25px;
-  border-collapse: collapse;
+tr{
+  padding-top: 10px;
+  border: solid;
+  border-width: 1px 1px;
 }
 
-tr{
-  border: solid;
-  border-width: 1px 0;
+td{
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+th, td{
+  border-spacing: 10px;
 }
 
 table td tr{
@@ -69,6 +129,21 @@ table td tr{
   background-image: url("https://acegif.com/wp-content/gifs/raining-money-41.gif");
   background-repeat:repeat;
   display: block;
+}
+
+/* .coins-container{
+  background-image: url("https://i.ibb.co/ScqSY2Y/4c108302aefc533f37134b18646c90a5-4.png");
+  background-repeat:repeat;
+  display: block;
+} */
+
+
+.coinsImage{
+  height: 200px;
+  width: auto;
+  position:relative;
+  width: auto;
+  padding-bottom: 10px;
 }
 
 .money-image{
@@ -83,11 +158,12 @@ table td tr{
   text-align: center;
   align-items: center;
   margin:auto;
+  padding-top: 10px;
 }
 
 .app-name {
   text-align: center;
-  background-color: lightblue;
+  background-color: rgb(197, 231, 242);
 }
 
 
@@ -115,6 +191,33 @@ button {
   justify-self: center;
   text-align: center;
   justify-content: center;
+}
+
+.link-button{
+  position: relative;
+  background-color: whitesmoke;
+  color: firebrick;
+  border: 1px solid firebrick;
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.homeNav{
+  padding-bottom: 20px;
+  padding-top: 10px;
+  cursor: pointer;
+  width: 30%;
+  display: flex;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 .buttonContainer {
@@ -161,10 +264,24 @@ h6 {
 
 .expense .expenseName{
   color: firebrick;
-  font-size: 28px;
+  font-size: 27px;
   padding-top: 15px;
   padding-bottom: 5px;
-  line-height: 10px;
+  line-height: 1;
+}
+
+.homepageForm{
+  height: 150px;
+}
+
+.expense{
+  text-align: center;
+  border: firebrick solid 2px;
+  padding: 1rem;
+  width: 15rem;
+  height: 33rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
 }
 
 .expenseImage{
@@ -182,7 +299,7 @@ h6 {
   color: firebrick;
 }
 
-.expense button {
+.expense button, .payday button {
   margin-top: 0.2rem;
 }
 
@@ -224,16 +341,6 @@ h6 {
   display: block;
 }
 
-.expense{
-  text-align: center;
-  border: firebrick solid 2px;
-  padding: 1rem;
-  width: 15rem;
-  height: 33rem;
-  display: inline-grid;
-  margin: 1rem 2rem;
-}
-
 .expenseImage{
   justify-self: center;
   justify-items:center;
@@ -265,23 +372,28 @@ h6 {
   text-shadow: .5px .5px gray;
 }
 
-nav a {
+nav a, .link-button a{
   display: inline-block;
   padding: 0.25rem;
   margin: 1rem;
   text-decoration: none;
   font-size: 1.2em;
   color: firebrick;
-  border-bottom: 2px solid firebrick;
+  border-bottom: 3px solid firebrick;
   transition: 0.1s;
 }
 
-nav a:hover,
-nav a:active {
-  color:mistyrose;
-  border-bottom: 2px solid tomato;
+.link-button a:hover, .link-button a:active{
+  border-bottom: 3px solid tomato;
   cursor:pointer;
 }
+
+nav a:hover, nav a:active{
+  color:firebrick;
+  border-bottom: 3px solid tomato;
+  cursor:pointer;
+}
+
 
 nav a.active {
   background-color: maroon;
@@ -299,7 +411,7 @@ nav a.active {
 }
 
 .technologies span {
-  background-color: lightblue;
+  background-color: rgb(197, 231, 242);
   margin: 0.25rem;
   padding: 0.5rem;
   border-radius: 4px;
@@ -331,7 +443,6 @@ form.new-form {
 }
 
 .receipts{
-  margin-left: 35px;
-  font-weight: normal;
-  color: firebrick;
+  padding-left: 23px;
+  padding-top: 10px;
 }

@@ -12,6 +12,8 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, 
     amount={expense.amount}
     category={expense.category}
     day={expense.day}
+    isSplit={expense.isSplit}
+    payday={expense.payday}
     deleteExpense={deleteExpense}
     handleSearch={setUserSearch}
     handleSplitPrice={handleSplitPrice}

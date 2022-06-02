@@ -1,5 +1,4 @@
 import React, {useState,useEffect} from 'react'
-import BorderGif from './BorderGif';
 import Table from './Table';
 import { NavLink } from 'react-router-dom';
 
@@ -45,21 +44,23 @@ function Home({expenses}) {
   let balance=<span className={(displayBudget-addedExpense).toFixed(2)<0?'low-balance':'balance'}>{(displayBudget-addedExpense).toFixed(2)}</span>
   return (
     <div id="home">
-      <BorderGif/>
-      <h1 style={{ color: "firebrick" }}>
-          Welcome To Budget Tracker For "{new Date().toLocaleString("en-US", { month: "long" })} {new Date().getFullYear()}"
+      {/* <Coins/> */}
+      <h1 style={{ color: "firebrick", paddingTop: "10px" }}>
+          Welcome to Budget Tracker for {new Date().toLocaleString("en-US", { month: "long" })} {new Date().getFullYear()}
       </h1>
       {/* <h2>{new Date().toLocaleString() + ""}</h2> */}
       <h2>{date}</h2>
-      <form className="new-form" onSubmit={handleSubmit}>
-        <input placeholder="Enter Budget Amount.." type="number" value={budget.amount} onChange={handleChange}/>
-        <input type="submit"/>
+      {/* <h3>Enter your budget for this month:</h3> */}
+      <form className="new-form homepageForm" onSubmit={handleSubmit}>
+        <h4 className="formText" style={{ textAlign: "center" }}>Enter your budget for this month:</h4>
+        <input className="homepageBudget" placeholder="Enter dollar amount" type="number" value={budget.amount} onChange={handleChange}/>
+        <input className="homepageBudget" type="submit"/>
       </form>
-      <h2>Your Budget for {new Date().toLocaleString("en-US", { month: "long" })}: $ {displayBudget}</h2>
-      <h2>Your Total Expense for {new Date().toLocaleString("en-US", { month: "long" })}: $ {addedExpense}</h2>
-      <h2>Your Remaining Balance for {new Date().toLocaleString("en-US", { month: "long" })}: $ {balance}</h2>
+      <h3>Your budget for {new Date().toLocaleString("en-US", { month: "long" })}: ${displayBudget}</h3>
+      <h3>Your total spending in {new Date().toLocaleString("en-US", { month: "long" })} so far: ${addedExpense}</h3>
+      <h3>Your remaining balance for {new Date().toLocaleString("en-US", { month: "long" })}: ${balance}</h3>
       <Table expenses={expenses} />
-      <nav>
+      <nav className="homeNav">
             <NavLink className='link-button' exact to="/expenseform">Add a new expense</NavLink>
             <NavLink className='link-button'exact to="/expenselist">See Purchases in Details</NavLink>
       </nav>

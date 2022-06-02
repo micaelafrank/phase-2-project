@@ -7,11 +7,11 @@ import { Switch, Route } from 'react-router-dom'
 import Search from './Search'
 import MoneyIcon from './MoneyIcon'
 import BorderGif from './BorderGif'
+import Coins from './Coins'
 
 function App() {
   const [search, setUserSearch] = useState("")
   const [expenses, setExpenses] = useState([])
-  const [isSplit, setSplit] = useState(false);
 
   function onSubmitExpense(newExpense){
     const updatedList = [...expenses, newExpense]
@@ -34,10 +34,10 @@ function App() {
       setExpenses(updatedList);
     }
 
-    function handleUndoSplit(itemToSplit){
-      const updatedList = expenses.map((expense) => expense.id === itemToSplit.id ? itemToSplit : expense );
-      setExpenses(updatedList);
-    }
+    // function handleUndoSplit(itemToSplit){
+    //   const updatedList = expenses.map((expense) => expense.id === itemToSplit.id ? itemToSplit : expense );
+    //   setExpenses(updatedList);
+    // }
 
     const searchReceipts = expenses.filter((expense) => {
       return (expense.name.toLowerCase().includes(search.toLowerCase())) || 
@@ -53,7 +53,7 @@ function App() {
         </Route>
         <Route path="/expenseList">
           <Search search={search} handleSearch={setUserSearch} />
-          <ExpenseList handleSplitPrice={handleSplitPrice} handleUndoSplit={handleUndoSplit} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
+          <ExpenseList handleSplitPrice={handleSplitPrice} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
         </Route>
         <Route exact path="/">
           <Home expenses={expenses}/>
