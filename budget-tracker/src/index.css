@@ -1,8 +1,6 @@
 :root {
   --green: rgb(39, 189, 39);
 }
-
-
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +8,6 @@
   margin-left: 10px;
   margin-right: 10px;
 }
-
 .new-form{
   height: 570px;
   align-items: center;
@@ -18,13 +15,11 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 form label{
   align-items: center;
   margin: 0;
   justify-content: center;
 }
-
 table{
   margin-left: auto;
   margin-right: auto;
@@ -32,99 +27,81 @@ table{
   margin-top: 40px;
   margin-bottom: 20px;
 }
-
 #home{
   background-color: white;
   align-items: center;
   text-align: center;
 }
-
 .formText{
   padding-bottom: 10px;
 }
-
 .subtitle{
   padding-top: 15px;
   line-height: 1;
   font-weight: normal;
 }
-
 .subtitle2{
   color: rgb(202, 161, 56);
   text-shadow: 1px 1px black;
   font-weight: normal;
 }
-
 #home h3{
   line-height: 1.5;
   font-weight: bold;
   color:rgb(92, 138, 153);
 }
-
 .homepageBudget{
   height: 40px;
   margin-bottom: 8px;
   color: black;
 }
-
 .nav-bar{
   padding-top: 20px;
   margin-bottom: 15px;
   background-color: rgb(197, 231, 242);
 }
-
 form{
   width: 380px;
   margin: 30px 100px;
   height: 600px;
   background-color:rgb(197, 231, 242);
 }
-
 .inputText{
   font-size: 18px;
   padding-left: 10px;
 }
-
 input, select{
   margin-left: 10px;
   width: 300px;
   align-items: center;
   height: 50px;
 }
-
 #submit{
   font-size: 18px;
 }
-
 label{
   font-size: 18px;
   padding-top: 15px;
   margin: 10px 15px;
   font-family:'Times New Roman', Times, serif;
 }
-
 tr{
   padding-top: 10px;
   border: solid;
   border-width: 1px 1px;
 }
-
 td{
   padding: 3px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
 }
-
 th, td{
   border-spacing: 10px;
 }
-
 table td tr{
   border-left: 1px solid #000;
 }
-
-
 .money-container{
   background-image: url("https://acegif.com/wp-content/gifs/raining-money-41.gif");
   background-repeat:repeat;
@@ -136,8 +113,6 @@ table td tr{
   background-repeat:repeat;
   display: block;
 } */
-
-
 .coinsImage{
   height: 200px;
   width: auto;
@@ -145,13 +120,11 @@ table td tr{
   width: auto;
   padding-bottom: 10px;
 }
-
 .money-image{
   height: 130px;
   width: auto;
   position:relative;
 }
-
 .logo{
   width:5%;
   height:auto;
@@ -160,26 +133,19 @@ table td tr{
   margin:auto;
   padding-top: 10px;
 }
-
-
 .app-name {
   text-align: center;
   background-color: rgb(197, 231, 242);
 }
-
-
 body {
   font-family: "Playfair Display", serif;
 }
-
 h2 {
   margin-bottom: 1rem;
 }
-
 .greenButton{
   background-color: green;
 }
-
 button {
   position: relative;
   background-color: #e04b52;
@@ -196,7 +162,6 @@ button {
   text-align: center;
   justify-content: center;
 }
-
 .link-button{
   position: relative;
   background-color: whitesmoke;
@@ -213,7 +178,6 @@ button {
   align-items: center;
   margin: auto;
 }
-
 .homeNav{
   padding-bottom: 20px;
   padding-top: 10px;
@@ -223,18 +187,15 @@ button {
   margin: auto;
   margin-bottom: 10px;
 }
-
 .buttonContainer {
   text-align: center;
   padding: 1rem;
 }
-
 button:hover {
   background-color: whitesmoke;
   border: #e04b52 solid 1px;
   color: #e04b52;
 }
-
 .splitButton{
   position: relative;
   background-color: whitesmoke;
@@ -251,7 +212,6 @@ button:hover {
   text-align: center;
   justify-content: center;
 }
-
 h1,
 h2,
 h3,
@@ -261,11 +221,9 @@ h6 {
   font-family: 'Times New Roman', Times, serif;
   /* margin-bottom: 1em; */
 }
-
 .expenses {
   list-style: none;
 }
-
 .expense .expenseName{
   color: firebrick;
   font-size: 27px;
@@ -273,7 +231,6 @@ h6 {
   padding-bottom: 5px;
   line-height: 1;
 }
-
 .income .incomeName{
   color: green;
   font-size: 27px;
@@ -281,11 +238,9 @@ h6 {
   padding-bottom: 5px;
   line-height: 1;
 }
-
 .homepageForm{
   height: 150px;
 }
-
 .expense{
   text-align: center;
   border: firebrick solid 2px;
@@ -295,7 +250,6 @@ h6 {
   display: inline-grid;
   margin: 1rem 2rem;
 }
-
 .expenseImage{
   max-height: 250px;
   height: 100%;
@@ -304,50 +258,41 @@ h6 {
   width: auto;
   max-width: 170px;
 }
-
 .expensePurchaseDate{
   line-height: 4px;
   font-size: 18px;
   color: firebrick;
 }
-
 .incomePurchaseDate{
   line-height: 4px;
   font-size: 18px;
   color: green;
 }
-
 .expense button, .payday button {
   margin-top: 0.2rem;
 }
-
 @media (min-width: 768px) {
   .expenses {
     display: flex;
     flex-wrap: wrap;
   }
-
   .card {
     width: calc(33% - 2rem);
   }
 }
-
 @media (min-width: 1024px) {
   .expense {
     width: calc(25% - 2rem);
   }
 }
-
 @media (min-width: 1200px) {
   .expense {
     width: calc(20% - 2rem);
   }
 }
-
 .expenseContainer{
   margin: 2rem;
 }
-
 .expense img, .income img {
   max-height: 240px;
   align-items: center;
@@ -357,7 +302,6 @@ h6 {
   width: auto;
   display: block;
 }
-
 .expenseImage{
   justify-self: center;
   justify-items:center;
@@ -372,7 +316,6 @@ h6 {
   margin-right: auto;
   width: auto;
 }
-
 .expensePrice{
   font-size: 17px;
   line-height: 3px;
@@ -380,7 +323,6 @@ h6 {
   padding-bottom: 5px;
   font-weight: bold;
 }
-
 .expenseCategory{
   font-size: 17px;
   color: firebrick;
@@ -388,7 +330,6 @@ h6 {
   font-weight: bold;
   text-shadow: .5px .5px gray;
 }
-
 .greenCategory{
   font-size: 17px;
   color: green;
@@ -396,7 +337,6 @@ h6 {
   font-weight: bold;
   text-shadow: .5px .5px gray;
 }
-
 nav a, .link-button a{
   display: inline-block;
   padding: 0.25rem;
@@ -407,38 +347,30 @@ nav a, .link-button a{
   border-bottom: 3px solid firebrick;
   transition: 0.1s;
 }
-
 input#search{
   height: 40px;
 }
-
 .link-button a:hover, .link-button a:active{
   border-bottom: 3px solid tomato;
   cursor:pointer;
 }
-
 nav a:hover, nav a:active{
   color:firebrick;
   border-bottom: 3px solid tomato;
   cursor:pointer;
 }
-
-
 nav a.active {
   background-color: maroon;
   color: white;
 }
-
 .project-item {
   background-color: white;
   padding: 2rem;
   margin: 1rem;
 }
-
 .low-balance{
   color: red;
 }
-
 .technologies span {
   background-color: rgb(197, 231, 242);
   margin: 0.25rem;
@@ -446,36 +378,30 @@ nav a.active {
   border-radius: 4px;
   display: inline-block;
 }
-
 @media (min-width: 700px) {
   #project-list {
     flex-direction: row;
   }
-
   .project-item {
     width: 50%;
   }
 }
-
 form.new-form {
   border: solid black 1px;
   padding: 1em;
   display: flex;
   flex-direction: column;
 }
-
 .totalMoney{
   text-align: center;
   color: firebrick;
   font-size: 30px;
   font-weight: bolder;
 }
-
 .receipts{
   padding-left: 23px;
   padding-top: 10px;
 }
-
 .income{
   text-align: center;
   border: green solid 2px;

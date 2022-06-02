@@ -1,5 +1,4 @@
 import React from 'react';
-
 function ExpenseItem({name, image, amount, category, id, day, isSplit, deleteExpense, handleSplitPrice}){
     function toggleSplitPrice(){
       const splitPrice = {
@@ -21,13 +20,10 @@ function ExpenseItem({name, image, amount, category, id, day, isSplit, deleteExp
       })
       deleteExpense(id);
     }
-
     const dollarAmount = amount.toFixed(2);
-
     const showButton = amount<0 ? null :( <button className={isSplit ? "splitButton" : "button"} onClick={toggleSplitPrice}>
     {isSplit ? "Undo Split Cost" : "Split Cost"}
     </button>)
-
   return (
       <div className={(amount < 0) ? "income" : "expense"}>
         <h2 className={(amount < 0) ? "incomeName" : "expenseName"}>{name}</h2>

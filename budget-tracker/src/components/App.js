@@ -6,37 +6,30 @@ import ExpenseForm from './ExpenseForm'
 import { Switch, Route } from 'react-router-dom'
 import Search from './Search'
 
-
 function App() {
   const [search, setUserSearch] = useState("")
   const [expenses, setExpenses] = useState([])
-
   function onSubmitExpense(newExpense){
     const updatedList = [...expenses, newExpense]
     setExpenses(updatedList)
   }
-
   useEffect(() => {
     fetch("http://localhost:4000/expenses")
     .then(res => res.json())
     .then(data=> setExpenses(data))
   }, [])
-  
     function deleteExpense(id){
       const updatedList = expenses.filter((expense) => expense.id !== id);
       setExpenses(updatedList);
     }
-
     function handleSplitPrice(itemToSplit){
       const updatedList = expenses.map((expense) => expense.id === itemToSplit.id ? itemToSplit : expense );
       setExpenses(updatedList);
     }
-
     const searchReceipts = expenses.filter((expense) => {
       return (expense.name.toLowerCase().includes(search.toLowerCase())) || 
       (expense.category.toLowerCase().includes(search.toLowerCase()))
     })
-
   return (
     <div>
       <NavBar/>
@@ -58,5 +51,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

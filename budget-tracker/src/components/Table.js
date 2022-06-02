@@ -1,9 +1,9 @@
 import React from "react";
-
 function Table({expenses}){
     const current = new Date();
     const month = `${current.getMonth()+1}`;
     const year = `${current.getFullYear()}`;
+    // const dollarAmount = amount.toFixed(2);
     const tableRow = expenses.map((expense) => (
         <tr key={expense.id}>
             <td style={{ paddingRight: "20px"}}>{month}-{expense.day}-{year}</td>
@@ -26,5 +26,4 @@ function Table({expenses}){
         </table>
     )
 }
-
 export default Table;

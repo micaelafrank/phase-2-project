@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Coins from './Coins'
-
 function NavBar() {
   return (
     <div className='nav-bar'>
@@ -17,5 +16,4 @@ function NavBar() {
     </div>
   )
 }
-
 export default NavBar
