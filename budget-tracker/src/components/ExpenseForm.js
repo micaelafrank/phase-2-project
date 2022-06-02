@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import BorderGif from './BorderGif'
-import { useLocation } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 
 function ExpenseForm({onSubmitExpense}) {

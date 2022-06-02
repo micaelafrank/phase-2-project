@@ -37,13 +37,14 @@ table{
 }
 .subtitle{
   padding-top: 15px;
+  font-size: 28px;
   line-height: 1;
   font-weight: normal;
 }
 .subtitle2{
-  color: rgb(202, 161, 56);
+  color: rgb(79, 160, 100);
   text-shadow: 1px 1px black;
-  font-weight: normal;
+  font-size: 26px;
 }
 #home h3{
   line-height: 1.5;
@@ -115,7 +116,7 @@ table td tr{
 } */
 .coinsImage{
   height: 200px;
-  width: auto;
+  width: 100%;
   position:relative;
   width: auto;
   padding-bottom: 10px;
@@ -136,7 +137,7 @@ table td tr{
 .app-name {
   text-align: center;
   background-color: rgb(197, 231, 242);
-  font-size: 45px;
+  font-size: 60px;
 }
 body {
   font-family: "Playfair Display", serif;
@@ -256,7 +257,7 @@ h6 {
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content:center;
 }
 
 
@@ -281,6 +282,12 @@ h6 {
   font-size: 18px;
   color: green;
 }
+
+.incomeTable{
+  color: black;
+  background-color: rgb(229, 248, 229);
+}
+
 .expense button, .income button {
   margin-top: 0.2rem;
 }
