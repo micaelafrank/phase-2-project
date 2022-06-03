@@ -7,8 +7,7 @@
       "amount": 1100,
       "category": "Bills",
       "day": "1",
-      "isSplit": true,
-      "className": "splitButton"
+      "isSplit": true
     },
     {
       "id": 2,
@@ -71,15 +70,6 @@
       "amount": 9.99,
       "category": "Entertainment",
       "day": "13",
-      "isSplit": false
-    },
-    {
-      "id": 9,
-      "name": "EXTRA",
-      "image": "https://i.ibb.co/hK6GwV4/spotify.png",
-      "amount": 300,
-      "category": "extra",
-      "day": "14",
       "isSplit": false
     },
     {

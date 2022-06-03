@@ -18,7 +18,7 @@
 } */
 
 .new-form{
-  height: 570px;
+  height: 700px;
   align-items: center;
   /* position: absolute;
   top: -80px; */
@@ -50,6 +50,12 @@ table{
 }
 .formText{
   padding-bottom: 10px;
+  font-size: 23px;
+}
+
+.homeFormInput{
+  font-size: 20px;
+  padding: 5px;
 }
 
 .subtitles{
@@ -101,26 +107,40 @@ table{
 form{
   width: 380px;
   margin: 30px 100px;
-  height: 600px;
+  height: 700px;
   background-color:rgb(197, 231, 242);
 }
+
 .inputText{
-  font-size: 18px;
+  font-size: 20px;
+  height: 90px;
+  padding: 5px;
   padding-left: 10px;
 }
+
+#formHome label{
+  font-family: 'Roboto Condensed';
+}
+
+select{
+  font-size: 23px;
+  padding: 5px;
+}
+
 input, select{
   margin-left: 10px;
   width: 300px;
   align-items: center;
-  height: 50px;
 }
 #submit{
-  font-size: 18px;
+  font-size: 20px;
+  padding: 5px;
 }
 label{
   font-size: 18px;
   padding-top: 15px;
   margin: 10px 15px;
+  color: black;
   font-family:'Times New Roman', Times, serif;
 }
 tr{
@@ -178,7 +198,7 @@ table td tr{
 }
 
 .app-name {
-  font-size: 60px;
+  font-size: 56px;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: -5px;
   line-height: 1.1;
@@ -222,14 +242,14 @@ h2 {
   color:rgb(65, 67, 211);
   border-bottom: 5px solid rgb(65, 67, 211);
   cursor:pointer;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 #formButton:active{
   color:rgb(65, 67, 211);
   border-bottom: 5px solid rgb(65, 67, 211);
   cursor:pointer;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 button {
@@ -248,6 +268,8 @@ button {
   text-align: center;
   justify-content: center;
 }
+
+
 .link-button{
   position: relative;
   background-color: whitesmoke;
@@ -368,11 +390,17 @@ h6 {
 
 .homepageForm{
   height: 250px;
+  width: 30%;
 }
 
 #formHome{
   border: 6px solid rgb(65, 67, 211);
 }
+
+input.inputText{
+  height: 60px;
+}
+
 .expense{
   text-align: center;
   border: firebrick solid 4px;
@@ -500,6 +528,7 @@ h6 {
 
 .expenseContainer{
   margin: 2rem;
+  width: 100%;
 }
 
 .expense img{
@@ -598,6 +627,7 @@ nav a, .link-button a{
 input#search{
   height: 40px;
 }
+
 .link-button a:hover, .link-button a:active{
   border-bottom: 3px solid tomato;
   cursor:pointer;
@@ -653,6 +683,36 @@ form.new-form {
   background-color: white;
 }
 
+.navBarLinksHomepage{
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  right: 10;
+}
+.navBarLinksHomepage:active{
+  color:mintcream;
+  border-bottom: 5px solid mintcream;
+  cursor:pointer;
+  transform: scale(1.2);
+  border-bottom: 5px solid mintcream;
+}
+
+.border:active{
+  color:mintcream;
+  border-bottom: 5px solid mintcream;
+  cursor:pointer;
+  transform: scale(1.2);
+  border-bottom: 5px solid mintcream;
+}
+
+.border:hover{
+  color:mintcream;
+  border-bottom: 5px solid mintcream;
+  cursor:pointer;
+  transform: scale(1.2);
+  border-bottom: 5px solid mintcream;
+}
+
 form.new-form-paycheck {
   border: solid black 1px;
   padding: 6em;
@@ -672,6 +732,7 @@ form.new-form-paycheck {
 
 .totalMoney{
   text-align: center;
+  align-items: center;
   color: rgb(65, 67, 211);
   font-size: 30px;
   font-family: 'Open Sans', sans-serif;

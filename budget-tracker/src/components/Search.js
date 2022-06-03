@@ -1,6 +1,7 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
-function Search({ search, handleSearch }) {
+function Search({ search, handleSearch, expenses }) {
 
   return (
     <div className="searchbar">

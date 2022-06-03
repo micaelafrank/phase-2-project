@@ -57,9 +57,9 @@ console.log(budget)
         <h2 style={{ textAlign:"center", fontFamily: "Roboto Condensed", color: "black" }}>{date}</h2>
       </h1>
       <form className="new-form homepageForm" onSubmit={handleSubmit}>
-        <h4 className="formText" style={{ fontSize:"22px", textAlign: "center", color:"#323bb3", fontFamily:"Roboto Condensed", width:"400px"}}>Enter your budget for this month:</h4>
-        <input placeholder="Enter dollar amount" type="number" value={budget.amount} onChange={handleChange}/>
-        <input type="submit"/>
+        <h4 className="formText" style={{ fontSize:"29px", textAlign: "center", color:"#323bb3", fontFamily:"Roboto Condensed", width:"400px"}}>Enter your budget for this month:</h4>
+        <input className="homeFormInput" placeholder="Enter dollar amount" type="number" value={budget.amount} onChange={handleChange}/>
+        <input className="homeFormInput" type="submit"/>
       </form>
       <h3 className="homepageMath">Your budget for {new Date().toLocaleString("en-US", { month: "long" })}: ${displayBudget}</h3>
       <h3 className="homepageMath">Your earnings for {new Date().toLocaleString("en-US", { month: "long" })}: ${Math.abs(addedPaychecks)}</h3>

@@ -70,10 +70,10 @@ function NavBar() {
             <input className="homepageBudget" placeholder="Enter dollar amount" type="number" value={budget.amount} onChange={handleChange}/>
             <input className="homepageBudget" type="submit"/>
           </form> */}
-        <nav style={{ textAlign:"right", display:"flex", flexDirection:"column", right:"10" }}>
-          <NavLink exact to="/">Home</NavLink>
-          <NavLink to="/expenseform">Add Expense/Paycheck</NavLink>
-          <NavLink to="/expenselist">View All Expenses</NavLink>
+        <nav className="navBarLinksHomepage">
+          <NavLink className="border" exact to="/">Home</NavLink>
+          <NavLink className="border" to="/expenseform">Add Expense/Paycheck</NavLink>
+          <NavLink className="border" to="/expenselist">View All Expenses</NavLink>
         </nav>
         </div>
       </div>

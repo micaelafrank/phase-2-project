@@ -39,7 +39,7 @@ function App() {
         </Route>
         <Route path="/expenseList">
           <Search search={search} handleSearch={setUserSearch} />
-          <ExpenseList handleSplitPrice={handleSplitPrice} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
+          <ExpenseList handleSplitPrice={handleSplitPrice} total={expenses} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
         </Route>
         <Route exact path="/">
           <Home expenses={expenses}/>

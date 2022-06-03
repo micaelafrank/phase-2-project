@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ExpenseItem from './ExpenseItem'
 import { NavLink } from 'react-router-dom';
 
-function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice}) {
+function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, total}) {
   const [addedExpense, setAddedExpense] = useState(0);  
   const listOfExpenses = expenses.map((expense) => (
     <ExpenseItem
@@ -26,7 +26,7 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice})
   }, ["/"]);
 
   useEffect(()=>{
-    const totalExpense = expenses.reduce((accumulator,expense)=>{
+    const totalExpense = total.reduce((accumulator,expense)=>{
       return expense.amount<0?accumulator:expense.amount+accumulator},0)
       setAddedExpense(totalExpense.toFixed(2))
     },[expenses])

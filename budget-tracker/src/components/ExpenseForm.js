@@ -40,22 +40,23 @@ function ExpenseForm({onSubmitExpense}) {
       <div id="home">
             <BorderGif/>
             <h1 className="formHeading">Add Your Two Cents</h1>
-            <button id="formButton" onClick={()=>setPaycheck(!paycheck)}>{paycheck?"Submit an expense":"Submit a paycheck"}</button>
+            <button id="formButton" onClick={()=>setPaycheck(false)}>Submit an expense</button>
+            <button id="formButton" onClick={()=>setPaycheck(true)}>Submit a paycheck</button>
             <form id="formHome"className={paycheck?"new-form-paycheck":"new-form"} style={{backgroundColor: paycheck? "#ccffcf" : "#ffcdc9"}} onSubmit={handleSubmit}>
-              <h2 style={{ width:"300px", color: paycheck?"rgb(79, 160, 100)":"firebrick" }}>{paycheck?"Add A Paycheck":"Submit An Expense"}</h2>
-              <label>Name:</label>
+              <h2 style={{ width:"300px", fontFamily:"Open Sans", letterSpacing:"-2px", fontSize:"33px", color: paycheck?"rgb(79, 160, 100)":"firebrick" }}>{paycheck?"Add A Paycheck":"Submit An Expense"}</h2>
+              <label>NAME:</label>
               <input className="inputText" placeholder="Name.." name="name" value={formData.name} onChange={handleChange}/>
-              <label>Category:</label>
+              <label>CATEGORY:</label>
               <input className="inputText" placeholder="Category.." name="category" value={formData.category} onChange={handleChange}/>
-              <label>Amount:</label>
+              <label>AMOUNT:</label>
               <input className="inputText" placeholder="Amount.." name="amount" value={formData.amount} type="number" onChange={handleChange}/>
-              <label>Image:</label>
+              <label>IMAGE:</label>
               <input className="inputText" placeholder="Image.." name="image" value={formData.image} onChange={handleChange}/>
-              <label>Select day of the month:</label>
+              <label>SELECT DAY OF MONTH:</label>
               <select style={{ lineHeight:"50px" }} name="day" value={formData.day} onChange={handleChange}>
                 {daysOption}
               </select>
-              <input id="submit" style={{ lineHeight:"50px", marginTop: "20px"}} type="submit" value={paycheck?"Add Paycheck":"Add Expense"} />
+              <input id="submit" style={{ color:"white", backgroundColor:paycheck?"rgb(79, 160, 100)":"firebrick", lineHeight:"50px", marginTop: "20px"}} type="submit" value={paycheck?"ADD PAYCHECK":"ADD EXPENSE"} />
             </form>
             <nav className="homeNav">
               <NavLink className='link-button' exact to="/">Return to homepage</NavLink>
