@@ -1,10 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import BorderGif from './BorderGif'
 import { NavLink } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 function ExpenseForm({onSubmitExpense}) {
   const [ formData, setFormData ] = useState({name:"", category:"", amount:0, image:"", day:"1"})
   const [ paycheck, setPaycheck ] = useState(false)
+  const history = useHistory();
+
   function handleChange(e){
     let key=e.target.name
     let value= e.target.type==='number' ? parseFloat(e.target.value): e.target.value
@@ -23,8 +26,14 @@ function ExpenseForm({onSubmitExpense}) {
     })
         .then(res=>res.json())
         .then(newExpense=>onSubmitExpense(newExpense))
-    setFormData({name:"", category:"", amount:0, image:"", day:"1"})
+        setFormData({name:"", category:"", amount:0, image:"", day:"1"})
+        history.push('/expenselist')
   }
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  }, ["/"]);
+
     const days=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
     const daysOption=days.map((day)=><option key={day} value={day}>{day}</option>)
     return (
