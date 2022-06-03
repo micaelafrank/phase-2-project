@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 function Search({ search, handleSearch, expenses }) {
-
   return (
     <div className="searchbar">
       <label className="searchBar" htmlFor="search">Search for an expense by name or category:</label>

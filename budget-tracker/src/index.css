@@ -272,6 +272,7 @@ button {
 
 .link-button{
   position: relative;
+  font-family: "Roboto Condensed";
   background-color: whitesmoke;
   color: rgb(65, 67, 211);
   border: 2px solid rgb(65, 67, 211);
@@ -371,6 +372,10 @@ h6 {
 .expenses {
   list-style: none;
   background-color: rgb(224, 250, 236);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .expenseName{

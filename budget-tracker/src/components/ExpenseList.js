@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import ExpenseItem from './ExpenseItem'
 import { NavLink } from 'react-router-dom';
 
-function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, total}) {
-  const [addedExpense, setAddedExpense] = useState(0);  
+function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, total, search}) {
+  const [addedExpense, setAddedExpense] = useState(0); 
+  const [searchExpense, setSearchExpense] = useState(0);
+  
   const listOfExpenses = expenses.map((expense) => (
     <ExpenseItem
     key={expense.id}
@@ -22,7 +24,7 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, 
   ))
 
   useEffect(()=>{
-    window.scrollTo(0, 0);
+    window.scrollTo(0,0);
   }, ["/"]);
 
   useEffect(()=>{
@@ -31,10 +33,17 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, 
       setAddedExpense(totalExpense.toFixed(2))
     },[expenses])
 
+    useEffect(()=>{
+      const sExpense = expenses.reduce((accumulator,expense)=>{
+        return expense.amount<0?accumulator:expense.amount+accumulator},0)
+        setSearchExpense(sExpense.toFixed(2))
+      },[expenses])
+
   return (
     <div className='expenses'>
       <div className="expenseContainer">
         <h1 className='totalMoney'>Total money spent this month: ${addedExpense}</h1>
+        {search===""?null:<h1 className='totalMoney'><i>{search.toUpperCase()}</i>: ${searchExpense}</h1>}
         <h2 className="receipts">RECEIPTS:</h2>
           {listOfExpenses}
         <nav className="homeNav">

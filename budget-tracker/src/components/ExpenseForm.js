@@ -45,15 +45,15 @@ function ExpenseForm({onSubmitExpense}) {
             <form id="formHome"className={paycheck?"new-form-paycheck":"new-form"} style={{backgroundColor: paycheck? "#ccffcf" : "#ffcdc9"}} onSubmit={handleSubmit}>
               <h2 style={{ width:"300px", fontFamily:"Open Sans", letterSpacing:"-2px", fontSize:"33px", color: paycheck?"rgb(79, 160, 100)":"firebrick" }}>{paycheck?"Add A Paycheck":"Submit An Expense"}</h2>
               <label>NAME:</label>
-              <input className="inputText" placeholder="Name.." name="name" value={formData.name} onChange={handleChange}/>
+              <input required className="inputText" placeholder="Name.." name="name" value={formData.name} onChange={handleChange}/>
               <label>CATEGORY:</label>
-              <input className="inputText" placeholder="Category.." name="category" value={formData.category} onChange={handleChange}/>
+              <input required className="inputText" placeholder="Category.." name="category" value={formData.category} onChange={handleChange}/>
               <label>AMOUNT:</label>
-              <input className="inputText" placeholder="Amount.." name="amount" value={formData.amount} type="number" onChange={handleChange}/>
+              <input required className="inputText" placeholder="Amount.." name="amount" value={formData.amount} type="number" onChange={handleChange}/>
               <label>IMAGE:</label>
               <input className="inputText" placeholder="Image.." name="image" value={formData.image} onChange={handleChange}/>
               <label>SELECT DAY OF MONTH:</label>
-              <select style={{ lineHeight:"50px" }} name="day" value={formData.day} onChange={handleChange}>
+              <select required style={{ lineHeight:"50px" }} name="day" value={formData.day} onChange={handleChange}>
                 {daysOption}
               </select>
               <input id="submit" style={{ color:"white", backgroundColor:paycheck?"rgb(79, 160, 100)":"firebrick", lineHeight:"50px", marginTop: "20px"}} type="submit" value={paycheck?"ADD PAYCHECK":"ADD EXPENSE"} />
