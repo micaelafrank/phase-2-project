@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 function Home({expenses}) {
   const current = new Date();
   const date = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
-  const [budget, setBudget] = useState({amount:""})
+  const [budget, setBudget] = useState({amount:0})
   const [displayBudget, setDisplayBudget] = useState(0)
   const [addedExpense, setAddedExpense] = useState(0);
   const [addedPaychecks, setAddedPaychecks] = useState(0);
@@ -54,8 +54,8 @@ console.log(budget)
     <div id="home">
       <h1 style={{ fontFamily: "Open Sans", color: "black" }}>
         Tracking budget for: {new Date().toLocaleString("en-US", { month: "long" })} {new Date().getFullYear()}
-        <h2 style={{ textAlign:"center", fontFamily: "Roboto Condensed", color: "black" }}>{date}</h2>
       </h1>
+      <h2 style={{ textAlign:"center", fontSize:"40px", fontWeight:"bold", fontFamily: "Roboto Condensed", color: "black" }}>{date}</h2>
       <form className="new-form homepageForm" onSubmit={handleSubmit}>
         <h4 className="formText" style={{ fontSize:"29px", textAlign: "center", color:"#323bb3", fontFamily:"Roboto Condensed", width:"400px"}}>Enter your budget for this month:</h4>
         <input className="homeFormInput" placeholder="Enter dollar amount" type="number" value={budget.amount} onChange={handleChange}/>

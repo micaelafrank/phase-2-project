@@ -277,27 +277,28 @@ button {
   color: rgb(65, 67, 211);
   border: 2px solid rgb(65, 67, 211);
   border-radius: 5px;
-  height: 40px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 18px;
   text-align: center;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  margin: auto;
+  width: 220px;
 }
+
 .homeNav{
   /* padding-bottom: 20px; */
-  padding-top: 10px;
-  height: 100px;
+  align-items: center;
+  height: 120px;
+  justify-content: center;
+  display: inline-block;
+  vertical-align: middle;
   background-color: rgb(224, 250, 236);
   cursor: pointer;
   /* width: auto; */
-  display: flex;
   /* float: right; */
   /* margin: auto; */
-  margin-bottom: 10px;
 }
 
 .formHeading{
@@ -447,7 +448,6 @@ input.inputText{
 }
 
 .headerCircle{
-  margin-left: 100px;
   position: relative;
   width: 320px;
   height: 400px;

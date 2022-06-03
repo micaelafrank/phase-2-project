@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Table ({expenses}){
+    const [addedExpense, setAddedExpense] = useState(0);
+    useEffect(()=>{
+        const totalExpense = expenses.reduce((accumulator,expense)=>{
+          return expense.amount<0?accumulator:expense.amount+accumulator},0)
+          setAddedExpense(totalExpense.toFixed(2))
+        },[expenses])
+
     const current = new Date();
     const month = `${current.getMonth()+1}`;
     const year = `${current.getFullYear()}`;
@@ -22,7 +29,7 @@ function Table ({expenses}){
                     <th>Category</th>
                 </tr>
             </thead>
-            <tbody>{tableRow}</tbody>
+            <tbody>{tableRow}<tr><td></td><td><b>Total Spent:</b></td><td><em><b>${addedExpense}</b></em></td></tr></tbody>        
         </table>
     )
 }
