@@ -35,7 +35,7 @@ function Home({expenses}) {
     let value = parseFloat(e.target.value)
     setBudget((budget)=>({...budget,"amount":value}))
   }
-//console.log(budget)
+console.log(budget)
   function handleSubmit(e){
     e.preventDefault()
     fetch(`http://localhost:4000/budget/1`,{
@@ -52,22 +52,19 @@ function Home({expenses}) {
   let balance=<span className={(displayBudget+Math.abs(addedPaychecks)-addedExpense).toFixed(2)<0?'low-balance':'balance'}>{(displayBudget+Math.abs(addedPaychecks)-addedExpense).toFixed(2)}</span>
   return (
     <div id="home">
-      {/* <Coins/> */}
-      <h1 style={{ color: "firebrick", paddingTop: "10px" }}>
-          Welcome to Budget Tracker for {new Date().toLocaleString("en-US", { month: "long" })} {new Date().getFullYear()}
+      <h1 style={{ fontFamily: "Open Sans", color: "black" }}>
+        Tracking budget for: {new Date().toLocaleString("en-US", { month: "long" })} {new Date().getFullYear()}
+        <h2 style={{ textAlign:"center", fontFamily: "Roboto Condensed", color: "black" }}>{date}</h2>
       </h1>
-      {/* <h2>{new Date().toLocaleString() + ""}</h2> */}
-      <h2>{date}</h2>
-      {/* <h3>Enter your budget for this month:</h3> */}
       <form className="new-form homepageForm" onSubmit={handleSubmit}>
-        <h4 className="formText" style={{ textAlign: "center" }}>Enter your budget for this month:</h4>
-        <input className="homepageBudget" placeholder="Enter dollar amount" type="number" value={budget.amount} onChange={handleChange}/>
-        <input className="homepageBudget" type="submit"/>
+        <h4 className="formText" style={{ fontSize:"22px", textAlign: "center", color:"#323bb3", fontFamily:"Roboto Condensed", width:"400px"}}>Enter your budget for this month:</h4>
+        <input placeholder="Enter dollar amount" type="number" value={budget.amount} onChange={handleChange}/>
+        <input type="submit"/>
       </form>
-      <h3>Your budget for {new Date().toLocaleString("en-US", { month: "long" })}: ${displayBudget}</h3>
-      <h3>Your earnings for {new Date().toLocaleString("en-US", { month: "long" })}: ${Math.abs(addedPaychecks)}</h3>
-      <h3>Your total spending in {new Date().toLocaleString("en-US", { month: "long" })} so far: ${addedExpense}</h3>
-      <h3>Your remaining balance for {new Date().toLocaleString("en-US", { month: "long" })}: ${balance}</h3>
+      <h3 className="homepageMath">Your budget for {new Date().toLocaleString("en-US", { month: "long" })}: ${displayBudget}</h3>
+      <h3 className="homepageMath">Your earnings for {new Date().toLocaleString("en-US", { month: "long" })}: ${Math.abs(addedPaychecks)}</h3>
+      <h3 className="homepageMath">Your total spending in {new Date().toLocaleString("en-US", { month: "long" })} so far: ${addedExpense}</h3>
+      <h3 className="homepageMath">Your remaining balance for {new Date().toLocaleString("en-US", { month: "long" })}: ${balance}</h3>
       <Table expenses={expenses} />
       <nav className="homeNav">
             <NavLink className='link-button' exact to="/expenseform">Add a new expense</NavLink>

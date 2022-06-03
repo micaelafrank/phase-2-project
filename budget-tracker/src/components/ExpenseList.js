@@ -35,7 +35,7 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice})
     <div className='expenses'>
       <div className="expenseContainer">
         <h1 className='totalMoney'>Total money spent this month: ${addedExpense}</h1>
-        <h2 className="receipts">Receipts:</h2>
+        <h2 className="receipts">RECEIPTS:</h2>
           {listOfExpenses}
         <nav className="homeNav">
             <NavLink className='link-button' exact to="/">Return to homepage</NavLink>
