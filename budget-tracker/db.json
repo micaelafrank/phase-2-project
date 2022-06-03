@@ -196,12 +196,20 @@
       "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTxlaA9i6_yP6QrSjUZVnNlG5Tij0-dlQm2BLmxsP67u9krybPiaPCOPx186XIFrK_FDRgU1Qx10qfsJKG08Qp2ZVuOWzPKnI0QxUCRp8SehxRIXyogW_Dv&usqp=CAE",
       "day": "30",
       "id": 23
+    },
+    {
+      "name": "Sinclair",
+      "category": "Person",
+      "amount": 200.99,
+      "image": "https://i.ibb.co/K7nvf5y/sinclair.png",
+      "day": "30",
+      "id": 24
     }
   ],
   "budget": [
     {
       "id": 1,
-      "amount": 0
+      "amount": 3000
     }
   ]
 }

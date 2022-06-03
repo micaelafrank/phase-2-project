@@ -672,7 +672,7 @@ nav a:hover, nav a:active{
   }
 }
 form.new-form {
-  border: solid black 1px;
+  border: solid rgb(223, 161, 161) 1px;
   padding: 6em;
   display: flex;
   align-items: center;

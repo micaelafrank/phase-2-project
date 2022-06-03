@@ -46,11 +46,11 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, 
         {search===""?null:<h1 className='totalMoney'><i>{search.toUpperCase()}</i>: ${searchExpense}</h1>}
         <h2 className="receipts">RECEIPTS:</h2>
           {listOfExpenses}
-        <nav className="homeNav">
-            <NavLink className='link-button' exact to="/">Return to homepage</NavLink>
-        </nav>
       </div>
-    </div>
+     <nav style={{ textAlign:"center", alignItems:"center", marginLeft:"auto", marginRight:"auto"}}className="homeNav">
+      <NavLink style={{ textAlign:"center", alignItems:"center"}} className='link-button' exact to="/">Return to homepage</NavLink>
+    </nav>
+  </div>
   )
 }
 
