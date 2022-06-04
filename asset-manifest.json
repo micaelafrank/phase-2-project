@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/budget-tracker/static/css/main.a1ca496e.css",
-    "main.js": "/budget-tracker/static/js/main.75ba6435.js",
-    "static/js/787.3523ed75.chunk.js": "/budget-tracker/static/js/787.3523ed75.chunk.js",
-    "index.html": "/budget-tracker/index.html",
-    "main.a1ca496e.css.map": "/budget-tracker/static/css/main.a1ca496e.css.map",
-    "main.75ba6435.js.map": "/budget-tracker/static/js/main.75ba6435.js.map",
-    "787.3523ed75.chunk.js.map": "/budget-tracker/static/js/787.3523ed75.chunk.js.map"
+    "main.css": "/phase-2-project/static/css/main.a1ca496e.css",
+    "main.js": "/phase-2-project/static/js/main.74652db8.js",
+    "static/js/787.3127816c.chunk.js": "/phase-2-project/static/js/787.3127816c.chunk.js",
+    "index.html": "/phase-2-project/index.html",
+    "main.a1ca496e.css.map": "/phase-2-project/static/css/main.a1ca496e.css.map",
+    "main.74652db8.js.map": "/phase-2-project/static/js/main.74652db8.js.map",
+    "787.3127816c.chunk.js.map": "/phase-2-project/static/js/787.3127816c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a1ca496e.css",
-    "static/js/main.75ba6435.js"
+    "static/js/main.74652db8.js"
   ]
 }
