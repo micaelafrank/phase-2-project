@@ -4,10 +4,10 @@
       "id": 1,
       "name": "Rent",
       "image": "https://i.ibb.co/60hydCv/rent-check.png",
-      "amount": 1100,
+      "amount": 2200,
       "category": "Bills",
       "day": "1",
-      "isSplit": true
+      "isSplit": false
     },
     {
       "id": 2,
@@ -188,14 +188,6 @@
       "category": "Paychecks",
       "day": "30",
       "isSplit": false
-    },
-    {
-      "name": "Monkey",
-      "category": "Fun",
-      "amount": 96.99,
-      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTxlaA9i6_yP6QrSjUZVnNlG5Tij0-dlQm2BLmxsP67u9krybPiaPCOPx186XIFrK_FDRgU1Qx10qfsJKG08Qp2ZVuOWzPKnI0QxUCRp8SehxRIXyogW_Dv&usqp=CAE",
-      "day": "30",
-      "id": 23
     },
     {
       "name": "Sinclair",

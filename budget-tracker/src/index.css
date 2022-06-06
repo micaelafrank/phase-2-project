@@ -694,6 +694,7 @@ form.new-form {
   flex-direction: column;
   right: 10;
 }
+
 .navBarLinksHomepage:active{
   color:mintcream;
   border-bottom: 5px solid mintcream;
@@ -701,6 +702,7 @@ form.new-form {
   transform: scale(1.2);
   border-bottom: 5px solid mintcream;
 }
+
 
 .border:active{
   color:mintcream;

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://micaelafrank.github.io/phase-2-project/",
+  "homepage": "https://github.com/micaelafrank/phase-2-project",
   "name": "phase-2-project",
   "version": "0.1.0",
   "private": true,
@@ -16,8 +16,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

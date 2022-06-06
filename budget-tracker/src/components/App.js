@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 import ExpenseList from './ExpenseList'
 import ExpenseForm from './ExpenseForm'
 import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import Search from './Search'
 
 function App() {
@@ -32,22 +33,22 @@ function App() {
     })
   return (
     <div>
-      <NavBar/>
-      <Switch>
-        <Route path="/expenseform">
-          <ExpenseForm onSubmitExpense={onSubmitExpense}/>
-        </Route>
-        <Route path="/expenseList">
-          <Search search={search} handleSearch={setUserSearch} />
-          <ExpenseList search={search} handleSplitPrice={handleSplitPrice} total={expenses} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
-        </Route>
-        <Route exact path="/">
-          <Home expenses={expenses}/>
-        </Route>
-        <Route path="*">
-          <h1>404 not found</h1>
-        </Route>
-      </Switch>
+        <NavBar/>
+          <Switch>
+          <Route path="/expenseform">
+            <ExpenseForm onSubmitExpense={onSubmitExpense}/>
+          </Route>
+          <Route path="/expenseList">
+            <Search search={search} handleSearch={setUserSearch} />
+            <ExpenseList search={search} handleSplitPrice={handleSplitPrice} total={expenses} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses}/>
+          </Route>
+          <Route exact path="/">
+            <Home expenses={expenses}/>
+          </Route>
+          <Route path="*">
+            <h1>404 not found</h1>
+          </Route>
+        </Switch>
     </div>
   );
 }
