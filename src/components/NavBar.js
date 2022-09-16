@@ -56,8 +56,8 @@ function NavBar() {
       <div className='flexNav'>
         <div className="headerCircle">
           <div className="headerContainer">
-            <h1 style={{ marginTop:"0" }} className='app-name'>Budget</h1>
-            <h1 className="app-name tracker">Tracker</h1>
+            <h3 style={{ marginTop:"0", alignItems:"center", textAlign:"center" }} className='app-name'>Make It Rain</h3>
+            <p className="app-subtitle tracker">BUDGET TRACKER</p>
             <div className='subtitles'>
               <h2 className='subtitle'style={{ textAlign:"center" }}>HELPING YOU SAVE MONEY FOR A RAINY DAY</h2>
               <h2 className='subtitle2'style={{ textAlign:"center" }}>THIS MONTH'S FORECAST:<br></br>MAKE IT RAIN</h2>
