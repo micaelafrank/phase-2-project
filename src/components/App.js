@@ -13,6 +13,7 @@ function App() {
     const updatedList = [...expenses, newExpense]
     setExpenses(updatedList)
   }
+  
   useEffect(() => {
     fetch("http://localhost:4000/expenses")
       .then(res => res.json())

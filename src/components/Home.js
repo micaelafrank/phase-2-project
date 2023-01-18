@@ -12,7 +12,7 @@ function Home({ expenses }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, ["/"]);
+  }, []);
 
   useEffect(() => {
     const totalExpense = expenses.reduce((accumulator, expense) => {
@@ -49,8 +49,9 @@ function Home({ expenses }) {
     })
       .then(res => res.json())
       .then(data => setDisplayBudget(data.amount))
-    setBudget({ amount: "" })
+    // setBudget({ amount: "" })
   }
+  
   let balance = <span className={(displayBudget + Math.abs(addedPaychecks) - addedExpense).toFixed(2) < 0 ? 'low-balance' : 'balance'}>{(displayBudget + Math.abs(addedPaychecks) - addedExpense).toFixed(2)}</span>
   return (
     <div id="home">

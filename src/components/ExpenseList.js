@@ -15,6 +15,7 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, 
     amount={expense.amount}
     category={expense.category}
     day={expense.day}
+    expenses={expenses}
     isSplit={expense.isSplit}
     payday={expense.payday}
     deleteExpense={deleteExpense}
@@ -25,10 +26,10 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, 
 
   useEffect(()=>{
     window.scrollTo(0,0);
-  }, ["/"]);
+  }, []);
 
   useEffect(()=>{
-    const totalExpense = total.reduce((accumulator,expense)=>{
+    const totalExpense = expenses.reduce((accumulator,expense)=>{
       return expense.amount<0?accumulator:expense.amount+accumulator},0)
       setAddedExpense(totalExpense.toFixed(2))
     },[expenses])
@@ -40,17 +41,19 @@ function ExpenseList({expenses, deleteExpense, setUserSearch, handleSplitPrice, 
       },[expenses])
 
   return (
-    <div className='expenses'>
-      <div className="expenseContainer">
-        <h1 className='totalMoney'>Total money spent this month: ${addedExpense}</h1>
-        {search===""?null:<h1 className='totalMoney'><i>{search.toUpperCase()}</i>: ${searchExpense}</h1>}
-        <h2 className="receipts">RECEIPTS:</h2>
-          {listOfExpenses}
-      </div>
+    <>
+      <div className='expenses'>
+        <div className="expenseContainer">
+        <h2 className="app-name2">Receipts:</h2>
+        <h2 className='totalMoney' style={{ textShadow:"2px 2px solid #afff63", marginBottom: "10px" }}>TOTAL MONEY SPENT THIS MONTH: ${addedExpense}</h2>
+          {search === "" ? null : <h1 className='totalMoney'><i>{search.toUpperCase()}</i>: ${searchExpense}</h1>}
+        {listOfExpenses}
      <nav style={{ textAlign:"center", alignItems:"center", marginLeft:"auto", marginRight:"auto"}}className="homeNav">
       <NavLink style={{ textAlign:"center", alignItems:"center"}} className='link-button' exact to="/">Return to homepage</NavLink>
     </nav>
   </div>
+  </div>
+  </>
   )
 }
 
