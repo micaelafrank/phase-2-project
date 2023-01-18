@@ -13,7 +13,11 @@ function App() {
     const updatedList = [...expenses, newExpense]
     setExpenses(updatedList)
   }
-  
+
+  const current = new Date();
+  const date = `${current.getMonth() + 1}/${current.getDate()}/${current.getFullYear()}`;
+
+
   useEffect(() => {
     fetch("http://localhost:4000/expenses")
       .then(res => res.json())
@@ -33,7 +37,7 @@ function App() {
   })
   return (
     <div>
-      <NavBar />
+      <NavBar date={date} />
       <Switch>
         <Route path="/expenseform">
           <ExpenseForm onSubmitExpense={onSubmitExpense} />
@@ -43,7 +47,7 @@ function App() {
           <ExpenseList search={search} handleSplitPrice={handleSplitPrice} total={expenses} deleteExpense={deleteExpense} expenses={searchReceipts} setExpenses={setExpenses} />
         </Route>
         <Route exact path="/">
-          <Home expenses={expenses} />
+          <Home date={date} expenses={expenses} />
         </Route>
         <Route path="*">
           <h1>404 not found</h1>
